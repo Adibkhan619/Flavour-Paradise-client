@@ -8,10 +8,11 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
-//   signOut,
+  signOut,
 //   updateProfile,
 } from 'firebase/auth'
 import { app } from '../firebase/firebase.config'
+import axios from 'axios'
 // import axios from 'axios'
 
 export const AuthContext = createContext(null)
@@ -43,14 +44,14 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, githubProvider);
 }
 
-//   const logOut = async () => {
-//     setLoading(true)
-//     const { data } = await axios(`${import.meta.env.VITE_API_URL}/logout`, {
-//     //   withCredentials: true,
-//     })
-//     console.log(data)
-//     return signOut(auth)
-//   }
+  const logOut = async () => {
+    setLoading(true)
+    const { data } = await axios(`/logout`, {
+    //   withCredentials: true,
+    })
+    console.log(data)
+    return signOut(auth)
+  }
 
 //   const updateUserProfile = (name, photo) => {
 //     return updateProfile(auth.currentUser, {
@@ -81,8 +82,8 @@ const AuthProvider = ({ children }) => {
     createUser,
     signIn,
     signInWithGoogle,
-    githubLogin
-    // logOut,
+    githubLogin,
+    logOut,
     // updateUserProfile,
   }
 

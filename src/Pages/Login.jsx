@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 import { Helmet } from "react-helmet";
 import 'animate.css'
 import { IoMdEye } from "react-icons/io";
-import { AuthContext } from "./../Provider/AuthProvider";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
   const { signIn, signInWithGoogle, githubLogin } = useContext(AuthContext);

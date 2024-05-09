@@ -1,7 +1,5 @@
-
-
-import { NavLink } from "react-router-dom";
-import { AuthContext } from "./../Provider/AuthProvider";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 // import Drawer from "./style/Drawer";
 import { useContext, useEffect, useState } from "react";
 // import Drawer from "./style/Drawer";
@@ -9,22 +7,21 @@ import { useContext, useEffect, useState } from "react";
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
 
-    const [theme, setTheme] = useState('autumn');
+    const [theme, setTheme] = useState("retro");
     useEffect(() => {
-        localStorage.setItem('theme', theme)
-        const localTheme = localStorage.getItem('theme');
-        document.querySelector('html').setAttribute('data-theme', localTheme)
-    }, [theme])
+        localStorage.setItem("theme", theme);
+        const localTheme = localStorage.getItem("theme");
+        document.querySelector("html").setAttribute("data-theme", localTheme);
+    }, [theme]);
 
-    const handleToggle = e => {
+    const handleToggle = (e) => {
         if (e.target.checked) {
-            setTheme ('halloween')
+            setTheme("luxury");
+        } else {
+            setTheme("retro");
         }
-        else{
-            setTheme('autumn')
-        }
-    }
-    
+    };
+
     const Navlinks = (
         <>
             <li>
@@ -32,28 +29,32 @@ const Navbar = () => {
             </li>
 
             <li>
-                <NavLink to="/allTouristSpots">All Tourists Spots</NavLink>
+                <NavLink to="/allFoods">All Foods</NavLink>
             </li>
 
+          
             <li>
-                <NavLink to="/addTouristSpot">Add Tourist Spot</NavLink>
+                <NavLink to="/gallery">Gallery</NavLink>
             </li>
 
-            <li>
-                <NavLink to ="/myList">My List</NavLink>
+            {
+                user ? <li>
+                <NavLink to="/myProfile">My Profile</NavLink>
             </li>
-            {/* <li>
-                <NavLink to ="/login">Login</NavLink>
-            </li> */}
+            :
             <li>
-                <NavLink to ="/register">Join Now</NavLink>
+                <NavLink to="/register">Register</NavLink>
             </li>
+            }
+            
+
+            
         </>
     );
 
-    const handleLogOut = () => {
-        logOut().then().catch();
-    };
+    // const handleLogOut = () => {
+    //     logOut().then().catch();
+    // };
 
     return (
         <div>
@@ -89,86 +90,88 @@ const Navbar = () => {
                     </div>
                     <div className="flex items-center gap-2">
                         <div>
-                        <img  className="lg:w-16 lg:h-16 w-10 h-10 rounded-full border-4 border-orange-400 " src="https://i.postimg.cc/J76hY5Cc/Dream.png" alt="" />
+                            <img
+                                className="lg:w-16 lg:h-16 w-10 h-10 rounded-full border-4 border-orange-400 "
+                                src="https://i.postimg.cc/J76hY5Cc/Dream.png"
+                                alt=""
+                            />
+                        </div>
+                        <h1 className="oleo text-xl ">Wonder Seeker</h1>
                     </div>
-                    <h1 className="oleo text-xl ">Wonder Seeker</h1>
-                    </div>
-                    
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul  className="menu menu-horizontal px-1 space-x-3 text-lg">
+                    <ul className="menu menu-horizontal px-1 space-x-3 text-lg">
                         {Navlinks}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                
-{/* DROPDOWN */}
-                <div className="dropdown dropdown-end z-50">
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-        </div>
-      </div>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li>
-          <a className="justify-between">
-            Profile
-            <span className="badge">New</span>
-          </a>
-        </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
-      </ul>
-    </div>
+                <div className="navbar-end flex gap-2">
+                    {/* DROPDOWN */}
+                    <div className="dropdown dropdown-end z-50">
+                        <div
+                            tabIndex={0}
+                            role="button"
+                            className="btn btn-ghost btn-circle avatar"
+                        >
+                            <div className="w-10 rounded-full">
+                                {
+                                    user? <img
+                                    // className="w-10 h-10 border rounded-full"
+                                    title={user.displayName}
+                                    src={user.photoURL}
+                                    alt=""
+                                /> : <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                }
+                                {/*  */}
+                                
+                            </div>
+                        </div>
 
-    {/* <select className="dropdown"  name="" id="">
-        <ul className="menu menu-horizontal">
-            <li>name</li>
-        <li>name</li>
-        <li>name</li>
-        <li>name</li>
-        </ul>
-        
-    </select> */}
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                        >
+                            <li>
+                                <Link className="justify-between">
+                                    Profile
+                                    <span className="badge">New</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link>Settings</Link>
+                            </li>
+                            <li>
+                                <Link onClick={logOut}>Logout</Link>
+                            </li>
+                        </ul>
+                    </div>
 
-
-
-
-
-                    {/* <Drawer></Drawer> */}
                     {user ? (
                         <div className="flex items-center gap-2">
-                            <img
-                                className="w-10 h-10 border rounded-full"
-                                title={user.displayName}
-                                src={user.photoURL}
-                                alt=""
-                            />
                             <p className="hidden md:block lg:block">
                                 {user.email}
                             </p>
-                            {/* <Drawer></Drawer> */}
-
-                            <button
-                                onClick={handleLogOut}
-                                className="btn btn-primary
-                                 acme border-none"
-                            >
-                                Log Out
-                            </button>
+                       
                         </div>
                     ) : (
                         <div>
                             {/* <Drawer></Drawer> */}
                             <NavLink to="/login">
-                                <button className="btn btn-primary text-lg satisfy">Login</button>
+                                <button className="btn btn-primary text-lg satisfy" >
+                                    Login
+                                </button>
                             </NavLink>
-                            
                         </div>
                     )}
+
+                    {/* <Drawer></Drawer> */}
+
                     <div className="flex justify-between mx-2">
-                        <input value="" type="checkbox" 
-                onChange={handleToggle} className="toggle" />
+                        <input
+                            value=""
+                            type="checkbox"
+                            onChange={handleToggle}
+                            className="toggle"
+                        />
                     </div>
                 </div>
             </div>
