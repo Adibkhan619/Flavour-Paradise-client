@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {  useState } from "react";
 import toast from 'react-hot-toast';
 import { Helmet } from "react-helmet";
@@ -10,6 +10,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 const Login = () => {
   const { signIn, signInWithGoogle, githubLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -20,16 +21,19 @@ const Login = () => {
 
     signIn(email, password)
       .then((result) => {
-        toast("Login Successful !");
+        toast.success("Login Successful !");
         console.log(result.user);})
+        navigate("/")
       .catch((error) => {
-        toast("Invalid Email or Password");
+        toast.error("Invalid Email or Password");
         console.log(error);});
   };
   const handleGoogleLogin = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user, 'working');
+        toast.success("Login Successful !")
+        navigate("/")
       })
       .catch((error) => {
         console.log(error);
@@ -39,6 +43,8 @@ const Login = () => {
     githubLogin()
     .then((result) => {
       console.log(result.user, 'github working');
+      toast.success("Login Successful !")
+      navigate("/")
     })
     .catch((error) => {
       console.log(error);

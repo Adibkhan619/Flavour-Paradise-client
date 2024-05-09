@@ -131,7 +131,7 @@ const Navbar = () => {
                             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                         >
                             <li>
-                                <Link className="justify-between">
+                                <Link to="/myProfile" className="justify-between">
                                     Profile
                                     <span className="badge">New</span>
                                 </Link>
@@ -148,9 +148,9 @@ const Navbar = () => {
                     {user ? (
                         <div className="flex items-center gap-2">
                             <p className="hidden md:block lg:block">
-                                {user.email}
+                                {user.displayName}
                             </p>
-                       
+                            <button onClick={logOut} className="btn btn-ghost text-red-500">Logout</button>
                         </div>
                     ) : (
                         <div>

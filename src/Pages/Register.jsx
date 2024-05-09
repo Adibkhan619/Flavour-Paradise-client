@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../Provider/AuthProvider";
 import toast from 'react-hot-toast';
 import { IoMdEye } from "react-icons/io";
@@ -12,6 +12,7 @@ const Register = () => {
     const { createUser } = useContext(AuthContext);
     const [error, setError] = useState();
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -37,8 +38,9 @@ const Register = () => {
         // Create User
         createUser(email, password)
             .then((result) => {
-                toast("Registration Successful !");
+                toast.success("Registration Successful !");
                 console.log(result, "success");
+                navigate("/")
 
                 updateProfile(result.user, {
                     displayName: name,
@@ -145,7 +147,7 @@ const Register = () => {
                                         </span>
                                     </div>
 
-                                    <small className="text-red-600">
+                                    <small className="text-red-500 p-1">
                                         {error}
                                     </small>
                                 </div>

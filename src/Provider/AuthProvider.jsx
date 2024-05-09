@@ -13,6 +13,7 @@ import {
 } from 'firebase/auth'
 import { app } from '../firebase/firebase.config'
 import axios from 'axios'
+import toast from 'react-hot-toast'
 // import axios from 'axios'
 
 export const AuthContext = createContext(null)
@@ -50,7 +51,9 @@ const AuthProvider = ({ children }) => {
     //   withCredentials: true,
     })
     console.log(data)
+    toast.success('Logged Out')
     return signOut(auth)
+    
   }
 
 //   const updateUserProfile = (name, photo) => {
