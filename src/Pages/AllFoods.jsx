@@ -16,7 +16,7 @@ import img4 from "../assets/img4.jpg";
 import FoodCard from "../components/FoodCard";
 
 const AllFoods = () => {
-    const [foods, setFoods] = useState();
+    const [foods, setFoods] = useState([]);
     useEffect(() => {
         const getData = async () => {
             const { data } = await axios("http://localhost:5000/foods");
@@ -82,7 +82,7 @@ const AllFoods = () => {
             </div>
 
             {/* MAPPING FOODS */}
-            <div>
+            <div className="m-5 grid lg:grid-cols-2 md:grid-cols-2 grid-rows-1 gap-4  justify-center">
                 {foods.map((food) => (
                     <FoodCard key={food._id} food={food}></FoodCard>
                 ))}
