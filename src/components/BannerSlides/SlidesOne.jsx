@@ -2,13 +2,13 @@ const SlidesOne = () => {
     return (
         <div className="">
             <div
-                className="hero -z-9999  lg:min-h-[600px] w-full"
+                className="hero -z-999 lg:min-h-[600px] w-full"
                 style={{
                     backgroundImage:
                         "url(https://i.postimg.cc/T34zqRRp/vk-bro-79-ZJS8p-V70-unsplash.jpg)",
                 }}
             >
-                <div className="hero-overlay bg-gray-900 bg-opacity-30"></div>
+                <div className="hero-overlay -z-999 bg-gray-900 bg-opacity-30"></div>
                 <div className="  text-center text-neutral-content">
                     <div className="max-w-md">
                         <h1 className="mb-5 text-7xl text-gray-50 acme font-bold ">

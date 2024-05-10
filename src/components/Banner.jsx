@@ -9,7 +9,12 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 // import Slides from "./BannerSlides/Slides";
-import SlidesOne from "./BannerSlides/SlidesOne";
+// import SlidesOne from "./BannerSlides/SlidesOne";
+import Slides from "./Slides";
+import img1 from "../assets/img1.jpg"
+import img2 from "../assets/img2.jpg"
+import img3 from "../assets/img3.jpg"
+import img4 from "../assets/img4.jpg"
 
 export default function Carousel() {
     return (
@@ -28,17 +33,21 @@ export default function Carousel() {
                 }}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
+                className="mySwiper "
             >
                 <SwiperSlide>
-                    <SlidesOne></SlidesOne>
+                    <Slides image={img1} text={'here are some text'} paragraph={'here is paragraph'}></Slides>
                 </SwiperSlide>
                 <SwiperSlide>
-                    
+                    <Slides image={img2} text={'here are some text'} paragraph={'here is paragraph'}></Slides>
                 </SwiperSlide>
                 <SwiperSlide>
-                 
+                    <Slides image={img3} text={'here are some text'} paragraph={'here is paragraph'}></Slides>
                 </SwiperSlide>
+                <SwiperSlide>
+                    <Slides image={img4} text={'here are some text'} paragraph={'here is paragraph'}></Slides>
+                </SwiperSlide>
+                
             </Swiper>
         </div>
     );

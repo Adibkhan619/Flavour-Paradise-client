@@ -60,7 +60,7 @@ const Navbar = () => {
         <div>
             <div className="navbar josefin glass bg-opacity-20 ">
                 <div className="navbar-start">
-                    <div className="dropdown ">
+                    <div className="dropdown !z-[9999]">
                         <div
                             tabIndex={0}
                             role="button"
@@ -83,7 +83,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 px-5 space-x-2 text-lg"
+                            className="menu menu-sm dropdown-content mt-3 !z-[9999999] p-2 shadow bg-base-100 rounded-box w-52 px-5 space-x-2 text-lg"
                         >
                             {Navlinks}
                         </ul>
@@ -104,9 +104,12 @@ const Navbar = () => {
                         {Navlinks}
                     </ul>
                 </div>
-                <div className="navbar-end flex gap-2">
+                <div className="navbar-end flex gap-2 !z-999 !overflow-visible">
                     {/* DROPDOWN */}
-                    <div className="dropdown dropdown-end z-50">
+
+
+                    
+                    <div className="dropdown dropdown-end !z-999 !overflow-visible ">
                         <div
                             tabIndex={0}
                             role="button"
@@ -128,7 +131,7 @@ const Navbar = () => {
 
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                            className="menu menu-sm dropdown-content mt-3 !overflow-visible !z-999  p-2 shadow bg-base-100 rounded-box w-52"
                         >
                             <li>
                                 <Link to="/myProfile" className="justify-between">
