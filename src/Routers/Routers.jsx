@@ -8,6 +8,7 @@ import AllFoods from "../Pages/AllFoods";
 import Gallery from "../Pages/Gallery";
 import MyProfile from "../Pages/MyProfile";
 import PrivateRoutes from "../components/PrivateRoutes";
+import FoodDetails from "../Pages/FoodDetails";
 
 const Router = createBrowserRouter([
     {
@@ -37,6 +38,11 @@ const Router = createBrowserRouter([
         {
             path: "/myProfile",
             element: <MyProfile></MyProfile>
+        },
+        {
+            path: "/foods/:id",
+            element: <FoodDetails></FoodDetails>,
+            loader: ({params}) => fetch( `http://localhost:5000/foods/${params.id}`) 
         }
       ]
     },

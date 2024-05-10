@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 const Navbar4 = () => {
     const { user, logOut } = useContext(AuthContext);
 
-    const [theme, setTheme] = useState("retro");
+    const [theme, setTheme] = useState("emerald");
     useEffect(() => {
         localStorage.setItem("theme", theme);
         const localTheme = localStorage.getItem("theme");
@@ -16,7 +16,7 @@ const Navbar4 = () => {
         if (e.target.checked) {
             setTheme("luxury");
         } else {
-            setTheme("retro");
+            setTheme("emerald");
         }
     };
 

@@ -82,7 +82,7 @@ const AllFoods = () => {
             </div>
 
             {/* MAPPING FOODS */}
-            <div className="m-5 grid lg:grid-cols-2 md:grid-cols-2 grid-rows-1 gap-4  justify-center">
+            <div className="m-5 grid lg:grid-cols-3 md:grid-cols-2 grid-rows-1 gap-4  justify-center">
                 {foods.map((food) => (
                     <FoodCard key={food._id} food={food}></FoodCard>
                 ))}
