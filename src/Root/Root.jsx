@@ -14,9 +14,9 @@ const Root = () => {
             {/* <Navbar></Navbar> */}
             {/* <NavBar2></NavBar2> */}
             <Outlet></Outlet>
-            <div className='min-h-[calc(100vh-364px)]'>
+            {/* <div className='min-h-[calc(100vh-364px)]'>
                 
-            </div>
+            </div> */}
             
             <Footer></Footer>
         </div>

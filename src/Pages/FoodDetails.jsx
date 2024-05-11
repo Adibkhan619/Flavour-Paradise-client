@@ -68,8 +68,8 @@ const FoodDetails = () => {
                     </div>
 
                     <div className="card-actions justify-end">
-                        <Link to="/allTouristSpots">
-                            <button className="btn btn-primary">Go Back</button>
+                        <Link to={`/purchase/${_id}`}>
+                            <button className="btn btn-primary">Purchase</button>
                         </Link>
                     </div>
                 </div>
