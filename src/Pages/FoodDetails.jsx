@@ -6,26 +6,6 @@ const FoodDetails = () => {
     const {_id, food_name, food_image, food_category, price, made_by, food_origin, description, quantity} = food
     console.log(food);
     return (
-//         <div>
-//             <div className="mx-2 card lg:card-side bg-base-100 shadow-xl">
-//   <figure><img className="h-[600px]" src={food_image} alt="Album"/></figure>
-//   <div className="card-body">
-//     <h2 className="card-title">{food_name}</h2>
-//     <h2 className="card-title">{food_name}</h2>
-//     <h2 className="card-title">{food_name}</h2>
-//     <h2 className="card-title">{food_name}</h2>
-//     <p>Click the button to listen on Spotiwhy app.</p>
-//     <div className="card-actions justify-end">
-//       <button className="btn btn-primary">Listen</button>
-//     </div>
-//   </div>
-// </div>
-//         </div>
-
-
-
-
-
 
 <div className="card-body rounded-3xl mx-1 my-1 glass lg:my-5  lg:mx-5 lg:card-side bg-base-100 shadow-2xl gap-10 ">
                 <figure className="items-center flex">

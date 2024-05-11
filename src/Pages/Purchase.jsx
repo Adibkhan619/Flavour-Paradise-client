@@ -10,15 +10,15 @@ const Purchase = () => {
     console.log(user);
     const food = useLoaderData();
     const {
-        _id,
+        // _id,
         food_name,
-        food_image,
-        food_category,
+        // food_image,
+        // food_category,
         price,
-        made_by,
-        food_origin,
-        description,
-        quantity,
+        // made_by,
+        // food_origin,
+        // description,
+        // quantity,
     } = food;
     console.log(food);
 
@@ -81,7 +81,7 @@ const Purchase = () => {
                                 placeholder="Name"
                                 defaultValue={food_name}
                                 className="input input-bordered"
-                                required
+                                readOnly
                             />
                         
 
@@ -95,7 +95,7 @@ const Purchase = () => {
                                 placeholder="Price"
                                 defaultValue={price}
                                 className="input input-bordered"
-                                required
+                                readOnly
                             />
                         </div>
                     </div>
@@ -110,6 +110,7 @@ const Purchase = () => {
                                 type="number"
                                 name="quantity"
                                 placeholder="Quantity"
+                                defaultValue={0}
                                 className="input input-bordered"
                                 required
                             />
@@ -165,7 +166,7 @@ const Purchase = () => {
 
                     <div className="form-control mt-6">
                         <button type="submit" className="btn btn-primary">
-                            Login
+                            Order Now
                         </button>
                     </div>
                 </form>
