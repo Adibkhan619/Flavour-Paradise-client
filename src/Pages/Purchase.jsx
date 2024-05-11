@@ -12,13 +12,13 @@ const Purchase = () => {
     const {
         // _id,
         food_name,
-        // food_image,
-        // food_category,
+        food_image,
+        food_category,
         price,
-        // made_by,
-        // food_origin,
-        // description,
-        // quantity,
+        made_by,
+        food_origin,
+        description,
+        quantity,
     } = food;
     console.log(food);
 
@@ -27,12 +27,19 @@ const Purchase = () => {
         const form = e.currentTarget;
         const name = form.name.value;
         const price = form.price.value;
-        const quantity = parseInt(form.quantity.value);
+        const orderQuantity = parseInt(form.orderQuantity.value);
         const buyerName = form.buyerName.value;
         const email = form.email.value;
         const date = form.date.value;
+        const image = food_image;
+        const foodDescription = description;
+        const origin = food_origin;
+        const chef = made_by;
+        const category = food_category;
+        const available = quantity
 
-        const newOrder = { name, price, quantity, buyerName, email, date };
+        const newOrder = { name, price, orderQuantity, buyerName, email, date,  image, foodDescription, chef,
+            origin, category, available};
         console.log(newOrder);
     
 
@@ -49,22 +56,15 @@ const Purchase = () => {
       }
 };
     return (
-        <div className="flex gap-5 mx-5 justify-center lg:flex-row md:flex-row flex-col">
-            
-                
+        <div className="flex gap-5 mx-5 justify-center lg:flex-row md:flex-row flex-col">          
                     <div className="card card-compact  h-fit bg-base-100 shadow-xl">
                         <figure>
                             <img
-                                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                                alt="Shoes"
+                                src={food_image}                               
                             />
                         </figure>
                         <div className="card-body">
-                            <h2 className="card-title">Shoes!</h2>
-                            <p>
-                                If a dog chews shoes whose shoes does he choose?
-                            </p>
-                            
+                            <h2 className="card-title">{description}</h2>                        
                         </div>
                     </div>
                 
@@ -108,7 +108,7 @@ const Purchase = () => {
                             </label>
                             <input
                                 type="number"
-                                name="quantity"
+                                name="orderQuantity"
                                 placeholder="Quantity"
                                 defaultValue={0}
                                 className="input input-bordered"
