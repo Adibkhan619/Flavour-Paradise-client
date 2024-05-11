@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
+
+
 const Navbar4 = () => {
     const { user, logOut } = useContext(AuthContext);
 
@@ -34,11 +36,10 @@ const Navbar4 = () => {
                 <NavLink to="/gallery">Gallery</NavLink>
             </li>
 
-            {user ? (
-                <li>
-                    <NavLink to="/myProfile">My Profile</NavLink>
-                </li>
-            ) : (
+            {!user && (
+
+ 
+       
                 <li>
                     <NavLink to="/register">Register</NavLink>
                 </li>
@@ -97,7 +98,7 @@ const Navbar4 = () => {
 
 {/* NAV END */}
                 <div className="navbar-end flex gap-2">
-                    <div className="dropdown dropdown-end !z-999999">
+                    <div className="dropdown dropdown-end !z-999999 relative">
                         <div
                             tabIndex={0}
                             role="button"
@@ -142,22 +143,30 @@ const Navbar4 = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="dropdown dropdown-end">
+                    <div className="dropdown dropdown-end relative !z-999999">
                         <div
                             tabIndex={0}
                             role="button"
                             className="btn btn-ghost btn-circle avatar"
-                        >
-                            <div className="w-10 rounded-full">
+                        >{
+                            user && <div className="w-10 rounded-full">
                                 <img
                                     alt="Tailwind CSS Navbar component"
-                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                                    src={user.photoURL}
                                 />
                             </div>
+                        }
+                            
+                            {/* <div className="w-10 rounded-full">
+                                <img
+                                    alt="Tailwind CSS Navbar component"
+                                    src={user.photoURL}
+                                />
+                            </div> */}
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                            className="menu menu-sm dropdown-content mt-3 !z-[9999999999] p-2 shadow bg-base-100 rounded-box w-52 relative overflow-visible "
                         >
                             <li>
                                 <Link
@@ -169,7 +178,13 @@ const Navbar4 = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link>Settings</Link>
+                                <Link to="/addFood">Add Food</Link>
+                            </li>
+                            <li>
+                                <Link>My Added Food</Link>
+                            </li>
+                            <li>
+                                <Link>My Ordered Food</Link>
                             </li>
                             <li>
                                 <Link onClick={logOut}>Logout</Link>
