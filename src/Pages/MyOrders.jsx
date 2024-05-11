@@ -1,23 +1,23 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const MyOrders = () => {
     const myOrders = useLoaderData();
     // const [orders, setOrders] = useState([]);
-    const {
-        name,
-        price,
-        orderQuantity,
-        buyerName,
-        email,
-        date,
-        image,
-        foodDescription,
-        chef,
-        origin,
-        category,
-        available,
-    } = myOrders;
+    // const {
+    //     name,
+    //     price,
+    //     orderQuantity,
+    //     buyerName,
+    //     email,
+    //     date,
+    //     image,
+    //     foodDescription,
+    //     chef,
+    //     origin,
+    //     category,
+    //     available,
+    // } = myOrders;
     // setOrders(myOrders);
     console.log(myOrders);
     return (
@@ -78,12 +78,7 @@ const MyOrders = () => {
                             </th>
                         </tr>
                     ))
-        }
-
-
-        
-                        {/* row 1 */}
-                        
+        }                       
                     </tbody>
                     {/* foot */}
                     <tfoot>

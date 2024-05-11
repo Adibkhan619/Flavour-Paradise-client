@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 
 const FoodDetails = () => {
     const food = useLoaderData();
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     const {_id, food_name, food_image, food_category, price, made_by, food_origin, description, quantity} = food
     console.log(food);
     return (

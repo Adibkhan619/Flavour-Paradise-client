@@ -179,7 +179,7 @@ const Navbar4 = () => {
                                 <Link to="/addFood">Add Food</Link>
                             </li>
                             <li>
-                                <Link to={`/foods/${user?.email}`}>My Added Food</Link>
+                                <Link to={`/food/${user?.email}`}>My Added Food</Link>
                             </li>
                             <li>
                                 <Link to="/myOrders">My Orders</Link>

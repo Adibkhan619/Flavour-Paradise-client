@@ -36,7 +36,7 @@ export default function Carousel() {
                 className="mySwiper "
             >
                 <SwiperSlide>
-                    <Slides image={img1} text={'here are some text'} paragraph={'here is paragraph'}></Slides>
+                    <Slides image="https://i.postimg.cc/XJ2QfxJM/jed-owen-O4w-Sm-Nb6w18-unsplash.jpg" text={'here are some text'} paragraph={'here is paragraph'}></Slides>
                 </SwiperSlide>
                 <SwiperSlide>
                     <Slides image={img2} text={'here are some text'} paragraph={'here is paragraph'}></Slides>
