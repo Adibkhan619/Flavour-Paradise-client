@@ -6,6 +6,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar4 = () => {
     const { user, logOut } = useContext(AuthContext);
+    console.log(user);
 
     const [theme, setTheme] = useState("retro");
     useEffect(() => {
@@ -36,10 +37,7 @@ const Navbar4 = () => {
                 <NavLink to="/gallery">Gallery</NavLink>
             </li>
 
-            {!user && (
-
- 
-       
+            {!user && (     
                 <li>
                     <NavLink to="/register">Register</NavLink>
                 </li>
@@ -181,10 +179,10 @@ const Navbar4 = () => {
                                 <Link to="/addFood">Add Food</Link>
                             </li>
                             <li>
-                                <Link>My Added Food</Link>
+                                <Link to={`/foods/${user?.email}`}>My Added Food</Link>
                             </li>
                             <li>
-                                <Link>My Ordered Food</Link>
+                                <Link to="/myOrders">My Orders</Link>
                             </li>
                             <li>
                                 <Link onClick={logOut}>Logout</Link>

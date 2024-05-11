@@ -44,7 +44,7 @@ const AddFood = () => {
                 newFood
             );
             console.log(data);
-            toast.success("Order Placed Successfully");
+            toast.success("Food Added Successfully");
             navigate("/allFoods");
         } catch (err) {
             console.log(err);
