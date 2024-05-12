@@ -54,7 +54,7 @@ const MyOrders = () => {
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Category</th>
+                            <th>Category & Description</th>
                             <th>Quantity</th>
                             <th>Made by</th>
                             <th>Date</th>
@@ -115,7 +115,7 @@ const MyOrders = () => {
                     <tfoot>
                         <tr>
                             <th>Name</th>
-                            <th>Category</th>
+                            <th>Category & Description</th>
                             <th>Quantity</th>
                             <th>Made by</th>
                             <th>Date</th>

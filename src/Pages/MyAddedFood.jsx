@@ -60,7 +60,7 @@ const MyAddedFood = () => {
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Category</th>
+                                <th>Category & Description</th>
                                 <th>Quantity</th>
                                 <th>Made by</th>
                                 {/* <th>Date</th> */}
@@ -133,7 +133,7 @@ const MyAddedFood = () => {
                         <tfoot>
                             <tr>
                                 <th>Name</th>
-                                <th>Category</th>
+                                <th>Category & Description</th>
                                 <th>Quantity</th>
                                 <th>Made by</th>
                                 {/* <th>Date</th> */}
