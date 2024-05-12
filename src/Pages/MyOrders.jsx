@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 
 const MyOrders = () => {
     const [items, setItems] = useState([])
@@ -28,12 +28,11 @@ const MyOrders = () => {
     useEffect(() => {
         getData()
       }, [])
-    
+   
       const getData = async () => {
         const { data } = await axios(`http://localhost:5000/orders`)
         setItems(data)
       }
-
 
     const handleDelete = async id => {
         try {

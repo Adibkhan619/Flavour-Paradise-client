@@ -1,11 +1,15 @@
-import { useLoaderData } from "react-router-dom";
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+// import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 const MyAddedFood = () => {
-
-    const food = useLoaderData()
-    console.log(food);
-
+const {user} = useContext(AuthContext)
+const [items, setItems] = useState([])
+    // const food = useLoaderData()
+    // console.log(food);
     // const  {
     //     // _id,
     //     food_name,
@@ -20,6 +24,31 @@ const MyAddedFood = () => {
     //     order_count,
     // } = food;
     // console.log(food);
+
+    useEffect(() => {
+        getData()
+      }, [])
+   
+      const getData = async () => {
+        const { data } = await axios(`http://localhost:5000/food/${user.email}`)
+        setItems(data)
+      }
+
+    const handleDelete = async id => {
+        try {
+          const { data } = await axios.delete(`http://localhost:5000/foods/${id}`)
+          console.log(data)
+          toast.success('Delete Successful')
+    
+          getData()
+        } catch (err) {
+          console.log(err.message)
+          toast.error(err.message)
+        }
+      }
+
+
+
 
 
 
@@ -42,7 +71,7 @@ const MyAddedFood = () => {
                     </thead>
                     <tbody>
 {
-                    food.map(food => (
+                    items.map(food => (
 <tr key={food._id}>
                             <td className="w-[500px]">
                                 <div className="flex items-center gap-3">
@@ -77,7 +106,7 @@ const MyAddedFood = () => {
                             {/* <td>{order.date}</td> */}
                             <td>{food.price}</td>
                             <th>
-                                <button className="btn btn-ghost btn-xs">
+                                <button onClick={() => handleDelete(food._id)} className="btn btn-ghost btn-xs">
                                     Remove
                                 </button>
                             </th>

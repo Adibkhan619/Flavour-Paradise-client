@@ -11,7 +11,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 // import Slides from "./BannerSlides/Slides";
 // import SlidesOne from "./BannerSlides/SlidesOne";
 import Slides from "./Slides";
-import img1 from "../assets/img1.jpg"
+// import img1 from "../assets/img1.jpg"
 import img2 from "../assets/img2.jpg"
 import img3 from "../assets/img3.jpg"
 import img4 from "../assets/img4.jpg"
