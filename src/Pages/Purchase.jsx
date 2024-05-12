@@ -16,6 +16,7 @@ const Purchase = () => {
         food_category,
         price,
         made_by,
+        // email,
         food_origin,
         description,
         quantity,
@@ -27,6 +28,7 @@ const Purchase = () => {
         const form = e.currentTarget;
         const name = form.name.value;
         const price = form.price.value;
+        // const order = {}
         const orderQuantity = parseInt(form.orderQuantity.value);
         const buyerName = form.buyerName.value;
         const email = form.email.value;
@@ -41,7 +43,15 @@ const Purchase = () => {
         const newOrder = { name, price, orderQuantity, buyerName, email, date,  image, foodDescription, chef,
             origin, category, available};
         console.log(newOrder);
-    
+        
+        if(email == food.email){
+            toast.error("You cannot purchase food made by you")
+            return;
+        }
+        if(orderQuantity > food.quantity ){
+            toast.error("You cannot order more than "+ food.quantity)
+            return;
+        }
 
     try {
         const { data } = await axios.post(
@@ -104,8 +114,10 @@ const Purchase = () => {
                     <div className="flex lg:gap-4 flex-col lg:flex-row md:flex-row">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Quantity</span>
+                                <span className="label-text">Quantity</span> <span className="text-sm text-green-500 text-right">Available: <span className="font-semibold">{food.quantity}</span></span>
+                                
                             </label>
+                            {/* <p className="sm"></p> */}
                             <input
                                 type="number"
                                 name="orderQuantity"

@@ -41,8 +41,9 @@ const Router = createBrowserRouter([
                 element: (
                     <PrivateRoutes>
                         <Gallery></Gallery>
-                    </PrivateRoutes>
+                    </PrivateRoutes>     
                 ),
+                loader: () => fetch('http://localhost:5000/gallery')
             },
             {
                 path: "/myProfile",

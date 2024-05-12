@@ -2,19 +2,23 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { Link, Navigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
+// import { Link, Navigate } from "react-router-dom";
 // import { Navigate } from "react-router-dom";
 
 const AddPhotoModal = () => {
     const { user } = useContext(AuthContext);
-
+    const navigate = useNavigate()
     const handleAddFeedback =async (e) => {
         e.preventDefault();
         const form = e.currentTarget;
         const feedback = form.feedback.value;
         const photo = form.photo.value;
+        const name = user.displayName;
+        const email = user.email;
+        const userPhoto = user.photoURL;
 
-        const userFeedback ={feedback, photo}
+        const userFeedback ={feedback, photo, name, email, userPhoto}
          console.log(userFeedback);
 
          try {
@@ -24,10 +28,11 @@ const AddPhotoModal = () => {
             );
             console.log(data);
             toast.success("Your feedback and photo added Successfully");
-            // Navigate("/gallery");
+            navigate("/gallery");
         } catch (err) {
             console.log(err);
         }
+        e.target.reset();
     }
    
     return (
@@ -65,7 +70,8 @@ const AddPhotoModal = () => {
                                     type="text"
                                     placeholder="Your Experience"
                                     className="input input-bordered"
-                                    name="feedback"                                 
+                                    name="feedback"   
+                                                                  
                                 />                               
                             </div>
                             <div className="form-control">
@@ -81,7 +87,10 @@ const AddPhotoModal = () => {
                                 />                                                   
                             </div>
                             <div className="form-control mt-6">
-                                {/* if there is a button in form, it will close the modal */}                              
+                                {/* if there is a button in form, it will close the modal */}      
+
+                                {/* <Link to="/gallery">
+                                </Link>                         */}
                                     <button className="btn" type="submit">Feedback</button>
                                     <h1 className="text-sm my-4 text-right">Press <span className="text-green-600">Esc </span>to continue</h1>                               
                             </div>
