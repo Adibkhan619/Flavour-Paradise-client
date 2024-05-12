@@ -1,20 +1,23 @@
 import { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../Provider/AuthProvider";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 import { IoMdEye } from "react-icons/io";
 import { updateProfile } from "firebase/auth";
-import 'animate.css'
-
+import "animate.css";
+import axios from "axios";
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser,  setUser } = useContext(AuthContext);
     const [error, setError] = useState();
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
 
-    const handleRegister = (e) => {
+    const from = location.state || "/";
+
+    const handleRegister = async (e) => {
         e.preventDefault();
 
         const form = new FormData(e.currentTarget);
@@ -35,21 +38,42 @@ const Register = () => {
         }
         setError("");
 
-        // Create User
-        createUser(email, password)
-            .then((result) => {
-                toast.success("Registration Successful !");
-                console.log(result, "success");
-                navigate("/")
+        // // Create User
+        // createUser(email, password)
+        //     .then((result) => {
+        //         toast.success("Registration Successful !");
+        //         console.log(result, "success");
+        //         navigate("/")
 
-                updateProfile(result.user, {
-                    displayName: name,
-                    photoURL: photo,
-                  })
-                    .then()
-                    .catch();
-            })
-            .catch((error) => console.log(error));
+        //         updateProfile(result.user, {
+        //             displayName: name,
+        //             photoURL: photo,
+        //           })
+        //             .then()
+        //             .catch();
+        //     })
+        //     .catch((error) => console.log(error));
+
+        try {
+            const result = await createUser(email, password);
+
+            await updateProfile(name, photo);
+            setUser({ ...result?.user, photoURL: photo, displayName: name });
+
+            const { data } = await axios.post(
+                `http://localhost:5000/jwt`,
+                {
+                    email: result?.user?.email,
+                },
+                { withCredentials: true }
+            );
+            navigate(from, { replace: true });
+            console.log(data);
+            toast.success("Registration Successful");
+        } catch (err) {
+            console.log(err);
+            toast.error(err?.message);
+        }
     };
 
     return (
@@ -70,7 +94,11 @@ const Register = () => {
                                 Unlock Exclusive Benefits! Register Today.
                             </h1>
                             <p className="p-6 rounded-lg font-base bg-opacity-25 bg-orange-100 opacity-70 oleo">
-                            Join our community of travelers and gain access to personalized recommendations, special offers, and insider insights tailored to your preferences. Sign up today to start your journey towards unforgettable travel experiences.
+                                Join our community of travelers and gain access
+                                to personalized recommendations, special offers,
+                                and insider insights tailored to your
+                                preferences. Sign up today to start your journey
+                                towards unforgettable travel experiences.
                             </p>
                         </div>
                         <div className="card glass mt-5 shrink-0 w-full max-w-sm shadow-2xl bg-opacity-85 animate__fadeInDown animate__animated">
@@ -151,7 +179,7 @@ const Register = () => {
                                         {error}
                                     </small>
                                 </div>
-                                            {/* {
+                                {/* {
                                                 user?  <Link to="/myList">
                                     <button
                                         type="submit"
@@ -170,7 +198,6 @@ const Register = () => {
                                     >
                                         Register
                                     </button>
-                                    
                                 </div>
                                 <p className="text-gray-200">
                                     <small>Already have an account? </small>

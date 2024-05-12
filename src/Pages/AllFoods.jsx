@@ -24,7 +24,7 @@ const AllFoods = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios(`http://localhost:5000/all-foods?search=${search}`);
+            const { data } = await axios(`http://localhost:5000/foods?search=${search}`);
             setFoods(data);
         };
         getData();

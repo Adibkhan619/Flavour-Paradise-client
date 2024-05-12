@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-
 
 const PrivateRoutes = ({children}) => {
     const {user, loading} = useContext(AuthContext);
+    const location = useLocation();
     if (loading) {
         return <span className="loading loading-ring flex  h-64 mx-auto loading-lg"></span>
     }
@@ -13,7 +13,7 @@ const PrivateRoutes = ({children}) => {
     }
 
     return (
-        <Navigate to="/login"> 
+        <Navigate to="/login" state={location.pathname} replace={true}> 
         </Navigate>
         
        
