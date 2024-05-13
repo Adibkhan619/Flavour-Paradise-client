@@ -19,7 +19,7 @@ const TopFoodCard = ({ food }) => {
     console.log(food);
     return (
         <div>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
+            <div className="card card-compact w-full bg-base-100 shadow-xl">
                 <figure>
                     <img
                         src={image}
@@ -28,9 +28,9 @@ const TopFoodCard = ({ food }) => {
                 </figure>
                 <div className="card-body">
 
-                    <div className="flex justify-between items-center">
-                    <h2 className="card-title"><span className="text-3xl font-semibold">{name}</span></h2>
-                    <h2 className=""><span className="bg-red-500 px-5 shadow-lg text-white p-2 font-semibold">{origin}</span></h2>
+                    <div className="flex justify-between  items-center">
+                    <h2 className="card-title"><span className="text-3xl font-semibold sacramento ">{name}</span></h2>
+                    <h2 className=""><span className="bg-red-500 px-5 shadow-lg oleo text-white p-2 ">{origin}</span></h2>
                     </div>
                     <div className="flex justify-between">
                         <h2 className="">Category: <span className="font-semibold">{category}</span></h2>

@@ -15,6 +15,7 @@ import axios from "axios";
 // import img4 from "../assets/img4.jpg";
 import FoodCard from "../components/FoodCard";
 import SmallBanner from "../components/SmallBanner";
+import { Fade } from "react-awesome-reveal";
 
 const AllFoods = () => {
 
@@ -39,7 +40,8 @@ const AllFoods = () => {
     
 
     return (
-        <div>
+        <Fade>
+            <div>
             {/* BANNER CAROUSEL */}
             <SmallBanner></SmallBanner>
 
@@ -71,6 +73,7 @@ const AllFoods = () => {
                 ))}
             </div>
         </div>
+        </Fade>
     );
 };
 

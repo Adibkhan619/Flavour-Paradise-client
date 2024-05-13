@@ -1,6 +1,7 @@
 // import { useState } from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Fade } from "react-awesome-reveal";
 import toast from "react-hot-toast";
 // import { useLoaderData } from "react-router-dom";
 
@@ -47,7 +48,8 @@ const MyOrders = () => {
         }
       }
     return (
-        <div className="lg:mx-10">
+        <Fade>
+            <div className="lg:mx-10">
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
@@ -58,7 +60,8 @@ const MyOrders = () => {
                             <th>Quantity</th>
                             <th>Made by</th>
                             <th>Date</th>
-                            <th>Price</th>
+                            <th>Price (One)</th>
+                            <th>Total Price</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -103,6 +106,7 @@ const MyOrders = () => {
                                 <td>{order.chef}</td>
                                 <td>{order.date}</td>
                                 <td>{order.price}</td>
+                                <td>{order.price*order.orderQuantity}</td>
                                 <th>
                                     <button onClick={() => handleDelete(order._id)} className="btn btn-ghost btn-xs">
                                         Remove
@@ -119,13 +123,15 @@ const MyOrders = () => {
                             <th>Quantity</th>
                             <th>Made by</th>
                             <th>Date</th>
-                            <th>Price</th>
+                            <th>Price (One)</th>
+                            <th>Total Price</th>
                             <th></th>
                         </tr>
                     </tfoot>
                 </table>
             </div>
         </div>
+        </Fade>
     );
 };
 

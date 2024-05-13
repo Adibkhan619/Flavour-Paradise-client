@@ -52,6 +52,10 @@ const Purchase = () => {
             toast.error("You cannot order more than "+ food.quantity)
             return;
         }
+        if(orderQuantity < 1){
+            toast.error("You have to increase quantity")
+            return
+        }
 
     try {
         const { data } = await axios.post(
@@ -173,14 +177,20 @@ const Purchase = () => {
                             />
                         </div>
                     
-
-                    
-
-                    <div className="form-control mt-6">
+        {
+            quantity == 0 ? <div className="form-control mt-6">
+            <button type="submit" className="btn btn-primary" disabled>
+                Sorry! We are out of Stock :/
+            </button></div> : <div className="form-control mt-6">
                         <button type="submit" className="btn btn-primary">
                             Order Now
                         </button>
                     </div>
+        
+        }
+                    
+
+                    
                 </form>
             </div>
         </div>

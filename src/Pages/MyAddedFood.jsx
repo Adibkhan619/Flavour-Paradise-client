@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 
 const MyAddedFood = () => {
     const { user } = useContext(AuthContext);
@@ -52,7 +53,8 @@ const MyAddedFood = () => {
     };
 
     return (
-        <div>
+        <Fade>
+            <div>
             <div className="lg:mx-10">
                 <div className="overflow-x-auto">
                     <table className="table">
@@ -147,6 +149,7 @@ const MyAddedFood = () => {
                 </div>
             </div>
         </div>
+        </Fade>
     );
 };
 

@@ -1,8 +1,10 @@
+import { Fade } from "react-awesome-reveal";
 
 
 const Footer = () => {
     return (
-        <div className="mt-10">
+        <Fade>
+            <div className="mt-10">
             <footer className="footer footer-center p-10 bg-secondary text-primary-content">
                 <aside>
                 <img  className="lg:w-16 lg:h-16 w-12 h-12  rounded-full border-4 " src="https://i.postimg.cc/J76hY5Cc/Dream.png" alt="" />
@@ -51,6 +53,7 @@ const Footer = () => {
                 </nav>
             </footer>
         </div>
+        </Fade>
     );
 };
 

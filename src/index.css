@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Indie+Flower&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Mukta:wght@200;300;400;500;600;700;800&family=Oleo+Script:wght@400;700&family=Poetsen+One&family=Sacramento&family=Satisfy&display=swap');
+
+
+.one{
+    font-family: "Poetsen One", sans-serif;
+}
+.sacramento{
+    font-family: "Sacramento", cursive;
+}
+
+.oleo{
+    font-family: "Oleo Script", system-ui;
+}
+.acme{
+    font-family: "Acme", sans-serif;
+}
+
+.flower{
+    font-family: "Indie Flower", cursive;
+}
+
+.josefin{
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.satisfy{
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+  font-style: normal;
+}
+
+.mukta{
+    font-family: "Mukta", sans-serif;
+}

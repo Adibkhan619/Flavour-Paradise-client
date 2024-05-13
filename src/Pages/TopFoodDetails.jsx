@@ -8,19 +8,21 @@ const TopFoodDetails = () => {
     // useEffect(() => {
     //     window.scrollTo(0, 0)
     //   }, [food])
-    const {  _id,
+    const {  
+        // _id,
         name,
         price,
         orderQuantity,
-        buyerName,
-        email,
-        date,
+        // buyerName,
+        // email,
+        // date,
         image,
         foodDescription,
         chef,
         origin,
         category,
-        available} = food;
+        // available
+    } = food;
     console.log(food);
 
 
