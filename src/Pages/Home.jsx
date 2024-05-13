@@ -5,6 +5,7 @@ import UserReview from "../components/UserReview";
 import TopFood from "./TopFood";
 import BonusSec1 from "../components/HomeStyle/BonusSec1";
 import HomeDecor2 from "../components/HomeStyle/HomeDecor2";
+import HomeDecor3 from "../components/HomeStyle/HomeDecor3";
 // import Drawer from "../components/HomeStyle/Drawer";
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
                 <BonusSec1></BonusSec1>
                 <HomeDecor2></HomeDecor2>
                 <TopFood></TopFood>
+                <HomeDecor3></HomeDecor3>
                 <UserReview></UserReview>
             </div>
             
