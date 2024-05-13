@@ -96,7 +96,7 @@ const Navbar4 = () => {
 
 {/* NAV END */}
                 <div className="navbar-end flex gap-2">
-                    <div className="dropdown dropdown-end !z-999999 relative">
+                    {/* <div className="dropdown dropdown-end !z-999999 relative">
                         <div
                             tabIndex={0}
                             role="button"
@@ -140,7 +140,7 @@ const Navbar4 = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="dropdown dropdown-end relative !z-999999">
                         <div
                             tabIndex={0}
@@ -149,18 +149,11 @@ const Navbar4 = () => {
                         >{
                             user && <div className="w-10 rounded-full">
                                 <img
-                                    alt="Tailwind CSS Navbar component"
-                                    src={user.photoURL}
+                                    alt=""
+                                    src={user.photoURL }
                                 />
                             </div>
-                        }
-                            
-                            {/* <div className="w-10 rounded-full">
-                                <img
-                                    alt="Tailwind CSS Navbar component"
-                                    src={user.photoURL}
-                                />
-                            </div> */}
+                        }                       
                         </div>
                         <ul
                             tabIndex={0}
@@ -194,7 +187,7 @@ const Navbar4 = () => {
                             <p className="hidden md:block lg:block">
                                 {user.displayName}
                             </p>
-                            <button onClick={logOut} className="btn btn-ghost text-red-500">Logout</button>
+                            <button onClick={logOut} className="btn h-full btn-ghost text-red-500">Logout</button>
                         </div>
                     ) : (
                         <div>

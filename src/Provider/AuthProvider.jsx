@@ -48,7 +48,7 @@ const AuthProvider = ({ children }) => {
   const logOut = async () => {
     setLoading(true)
     const { data } = await axios(`/logout`, {
-    //   withCredentials: true,
+      withCredentials: true,
     })
     console.log(data)
     toast.success('Logged Out')
