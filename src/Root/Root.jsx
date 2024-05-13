@@ -9,7 +9,13 @@ import { Fade } from "react-awesome-reveal";
 const Root = () => {
     return (
         <Fade>
-        <div className='josefin font-medium'>
+        <div className='josefin font-medium bg-contain bg-fixed min-w-full  '> 
+        
+        {/* <div className='josefin font-medium bg-contain bg-fixed min-w-full  'style={{backgroundImage: 'url(https://i.postimg.cc/t4FTvtHv/bernard-hermant-1n-DW7-Bj-Bj1s-unsplash.jpg)' , backgroundSize: 'cover' }}>  */}
+        
+        {/* <div className='josefin font-medium 
+         
+        > */}
             <Navbar4></Navbar4>
             {/* <Navbar3></Navbar3> */}
             {/* <Navbar></Navbar> */}

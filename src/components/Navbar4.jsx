@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+// import Drawer from "./HomeStyle/Drawer";
 
 
 
@@ -17,7 +18,7 @@ const Navbar4 = () => {
 
     const handleToggle = (e) => {
         if (e.target.checked) {
-            setTheme("luxury");
+            setTheme("halloween");
         } else {
             setTheme("retro");
         }
@@ -36,6 +37,9 @@ const Navbar4 = () => {
             <li>
                 <NavLink to="/gallery">Gallery</NavLink>
             </li>
+            {/* <li>
+                <Drawer></Drawer>
+            </li> */}
 
             {!user && (     
                 <li>
@@ -46,7 +50,7 @@ const Navbar4 = () => {
     );
     return (
         <div>
-            <div className="navbar bg-base-100 relative !z-99999999">
+            <div className="navbar bg-base-100   relative !z-99999999">
                 <div className="navbar-start">
                     <div className="dropdown !z-[9999]">
                         <div
@@ -71,7 +75,7 @@ const Navbar4 = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 !z-[9999999] p-2 shadow bg-base-100 rounded-box w-52 px-5 space-x-2 text-lg"
+                            className="menu menu-sm dropdown-content mt-3 !z-[9999999] p-2 shadow bg-base-100 rounded-box w-52 px-5 space-x-2 text-lg "
                         >
                             {Navlinks}
                         </ul>
@@ -88,7 +92,7 @@ const Navbar4 = () => {
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 space-x-3 text-lg">
+                    <ul className="menu menu-horizontal px-1 space-x-3 text-lg ">
                         {Navlinks}
                     </ul>
                 </div>
