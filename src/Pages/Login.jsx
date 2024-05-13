@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -9,19 +9,19 @@ import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 
 const Login = () => {
-    const { signIn, signInWithGoogle, githubLogin } = useContext(AuthContext);
+    const { signIn, signInWithGoogle, githubLogin, user, loading } =
+        useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
-    const location = useLocation()
+    const location = useLocation();
 
     // NAVIGATE TO LAST VISITED PAGE
-    // useEffect(() => {
-    //     if (user) {
-    //       navigate('/')
-    //     }
-    //   }, [navigate, user])
-      const from = location.state || '/'
-
+    useEffect(() => {
+        if (user) {
+            navigate("/");
+        }
+    }, [navigate, user]);
+    const from = location.state || "/";
 
     //   EMAIL PASSWORD LOGIN
     const handleLogin = async (e) => {
@@ -34,14 +34,14 @@ const Login = () => {
             const result = await signIn(email, pass);
             console.log(result.user);
             const { data } = await axios.post(
-                'http://localhost:5000/jwt',
+                "http://localhost:5000/jwt",
                 {
                     email: result?.user?.email,
                 },
                 { withCredentials: true }
             );
             console.log(data);
-            navigate(from, { replace: true })
+            navigate(from, { replace: true });
             toast.success("Login Successful");
         } catch (err) {
             console.log(err);
@@ -62,7 +62,7 @@ const Login = () => {
             );
             console.log(data);
             toast.success("Login Successful !");
-            navigate(from, { replace: true })
+            navigate(from, { replace: true });
         } catch (error) {
             console.log(error);
         }
@@ -79,12 +79,13 @@ const Login = () => {
             );
             console.log(data);
             toast.success("Login Successful !");
-            navigate(from, { replace: true })
+            navigate(from, { replace: true });
         } catch (error) {
             console.log(error);
         }
     };
 
+    if (user || loading) return;
     return (
         <div>
             <Helmet>

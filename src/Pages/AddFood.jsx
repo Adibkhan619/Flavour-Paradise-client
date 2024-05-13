@@ -230,7 +230,7 @@ const AddFood = () => {
                                             name="made_by"
                                             placeholder="Made By"
                                             className="input input-bordered  "
-                                            defaultValue={user.displayName}
+                                            defaultValue={user?.displayName}
                                             readOnly
                                         />
                                         <div className="form-control mt-11 flex-1 justify-end">

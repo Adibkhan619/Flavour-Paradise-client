@@ -40,9 +40,9 @@ const Router = createBrowserRouter([
             {
                 path: "/gallery",
                 element: (
-                    <PrivateRoutes>
+                    // <PrivateRoutes></PrivateRoutes>
                         <Gallery></Gallery>
-                    </PrivateRoutes>     
+                         
                 ),
                 loader: () => fetch('http://localhost:5000/gallery')
             },

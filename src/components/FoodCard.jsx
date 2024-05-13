@@ -19,14 +19,6 @@ const FoodCard = ({food}) => {
                     <h2 className="card-title"><span className="text-3xl font-semibold">{food_name}</span></h2>
                     <h2 className=""><span className="bg-red-500 px-5 shadow-lg text-white p-2 font-semibold">{food_origin}</span></h2>
                     </div>
-
-
-                    {/* <div className="flex justify-between items-center">
-                        <h1>Category</h1>
-                        <h1 className="font-semibold">{food_category}</h1>
-                    </div> */}
-
-
                     <h2 className="">Category: <span className="font-semibold">{food_category}</span></h2>
                     <h2 className="">Chef: <span className="font-semibold">{made_by}</span></h2>
                     <h2 className="">Price: <span className="font-semibold">{price}</span></h2>

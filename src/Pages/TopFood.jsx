@@ -26,14 +26,15 @@ const TopFood = () => {
     // console.log(myOrders);
     
     useEffect(() => {
+        const getData = async () => {
+            const { data } = await axios(`http://localhost:5000/orders`)
+            setItems(data)
+          }
+          
         getData()
       }, [])
    
-      const getData = async () => {
-        const { data } = await axios(`http://localhost:5000/orders`)
-        setItems(data)
-      }
-      
+
       console.log(items);
 
 

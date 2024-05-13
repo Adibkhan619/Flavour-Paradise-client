@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../Provider/AuthProvider";
@@ -9,12 +9,18 @@ import "animate.css";
 import axios from "axios";
 
 const Register = () => {
-    const { createUser,  setUser } = useContext(AuthContext);
+    const { createUser, setUser, user, loading } = useContext(AuthContext);
     const [error, setError] = useState();
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
 
+    // NAVIGATE TO LAST VISITED PAGE
+    useEffect(() => {
+        if (user) {
+            navigate("/");
+        }
+    }, [navigate, user]);
     const from = location.state || "/";
 
     const handleRegister = async (e) => {
@@ -75,7 +81,7 @@ const Register = () => {
             toast.error(err?.message);
         }
     };
-
+    if (user || loading) return;
     return (
         <div>
             <div>

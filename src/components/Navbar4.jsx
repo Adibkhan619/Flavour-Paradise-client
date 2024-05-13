@@ -150,7 +150,7 @@ const Navbar4 = () => {
                             user && <div className="w-10 rounded-full">
                                 <img
                                     alt=""
-                                    src={user.photoURL }
+                                    src={user?.photoURL }
                                 />
                             </div>
                         }                       
@@ -185,7 +185,7 @@ const Navbar4 = () => {
                         {user ? (
                         <div className="flex items-center gap-2">
                             <p className="hidden md:block lg:block">
-                                {user.displayName}
+                                {user?.displayName}
                             </p>
                             <button onClick={logOut} className="btn h-full btn-ghost text-red-500">Logout</button>
                         </div>

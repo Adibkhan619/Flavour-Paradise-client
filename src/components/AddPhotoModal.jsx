@@ -14,9 +14,9 @@ const AddPhotoModal = () => {
         const form = e.currentTarget;
         const feedback = form.feedback.value;
         const photo = form.photo.value;
-        const name = user.displayName;
+        const name = user?.displayName;
         const email = user.email;
-        const userPhoto = user.photoURL;
+        const userPhoto = user?.photoURL;
 
         const userFeedback ={feedback, photo, name, email, userPhoto}
          console.log(userFeedback);
@@ -51,12 +51,12 @@ const AddPhotoModal = () => {
                     <div className="flex justify-between items-center lg:flex-row flex-col-reverse">
                         <div className="text-center m-4 lg:text-left">
                             <h3 className="font-bold text-lg ">
-                            Hello! {user.displayName}
+                            Hello! {user?.displayName}
                         </h3>
                         <p className="py-2">Share your thoughts and experience with us!</p>
                         </div>
                         
-                        <img src={user.photoURL} alt="" className="rounded-full max-w-20" />
+                        <img src={user?.photoURL} alt="" className="rounded-full max-w-20" />
                     </div>
 
                     

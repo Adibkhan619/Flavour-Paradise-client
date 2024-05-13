@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 
 const TopFoodDetails = () => {
     const food = useLoaderData();
-    // console.log(food);
+    console.log(food);
     // useEffect(() => {
     //     window.scrollTo(0, 0)
     //   }, [food])
@@ -66,11 +66,11 @@ const TopFoodDetails = () => {
                         </p>
                     </div>
 
-                    {/* <div className="card-actions justify-end">
-                        <Link to={`/purchase/${_id}`}>
-                            <button className="btn btn-primary">Purchase</button>
+                    <div className="card-actions justify-end">
+                        <Link to="/allFoods">
+                            <button className="btn btn-primary">Browse More...</button>
                         </Link>
-                    </div> */}
+                    </div>
                 </div>
             </div>
     );

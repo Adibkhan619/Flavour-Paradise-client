@@ -153,7 +153,7 @@ const Purchase = () => {
                                 type="text"
                                 name="buyerName"
                                 placeholder="Buyer Name"
-                                defaultValue={user.displayName}
+                                defaultValue={user?.displayName}
                                 className="input input-bordered"
                                 readOnly
                             />
