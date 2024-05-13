@@ -14,6 +14,7 @@ import AddFood from "../Pages/AddFood";
 import MyAddedFood from "../Pages/MyAddedFood";
 import MyOrders from "../Pages/MyOrders";
 import UpdateMyAddedFood from "../Pages/UpdateMyAddedFood";
+import TopFoodDetails from "../Pages/TopFoodDetails";
 
 const Router = createBrowserRouter([
     {
@@ -102,6 +103,11 @@ const Router = createBrowserRouter([
                 loader: ({ params }) =>
                     fetch(`http://localhost:5000/foods/${params.id}`),
             },
+            {
+                path: "/orders/:id",
+                element:<TopFoodDetails></TopFoodDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/orders/${params.id}`),
+            }
         ],
     },
 ]);
