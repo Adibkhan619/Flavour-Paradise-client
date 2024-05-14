@@ -6,7 +6,6 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AllFoods from "../Pages/AllFoods";
 import Gallery from "../Pages/Gallery";
-import MyProfile from "../Pages/MyProfile";
 import PrivateRoutes from "../components/PrivateRoutes";
 import FoodDetails from "../Pages/FoodDetails";
 import Purchase from "../Pages/Purchase";
@@ -15,11 +14,13 @@ import MyAddedFood from "../Pages/MyAddedFood";
 import MyOrders from "../Pages/MyOrders";
 import UpdateMyAddedFood from "../Pages/UpdateMyAddedFood";
 import TopFoodDetails from "../Pages/TopFoodDetails";
+import Error from "../Pages/Error";
 
 const Router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: "/",
@@ -41,20 +42,18 @@ const Router = createBrowserRouter([
                 path: "/gallery",
                 element: (
                     // <PrivateRoutes></PrivateRoutes>
-                        <Gallery></Gallery>
-                         
+                    <Gallery></Gallery>
                 ),
-                loader: () => fetch('http://localhost:5000/gallery')
-            },
-            {
-                path: "/myProfile",
-                element: <MyProfile></MyProfile>,
+                loader: () =>
+                    fetch("https://restaurant-assignment-sandy.vercel.app/gallery"),
             },
             {
                 path: "/foods/:id",
                 element: <FoodDetails></FoodDetails>,
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/foods/${params.id}`),
+                    fetch(
+                        `https://restaurant-assignment-sandy.vercel.app/foods/${params.id}`
+                    ),
             },
             {
                 path: "/purchase/:id",
@@ -64,7 +63,9 @@ const Router = createBrowserRouter([
                     </PrivateRoutes>
                 ),
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/foods/${params.id}`),
+                    fetch(
+                        `https://restaurant-assignment-sandy.vercel.app/foods/${params.id}`
+                    ),
             },
             {
                 path: "/addFood",
@@ -82,7 +83,9 @@ const Router = createBrowserRouter([
                     </PrivateRoutes>
                 ),
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/food/${params.email}`),
+                    fetch(
+                        `https://restaurant-assignment-sandy.vercel.app/food/${params.email}`
+                    ),
             },
             {
                 path: "/myOrders",
@@ -91,7 +94,8 @@ const Router = createBrowserRouter([
                         <MyOrders></MyOrders>
                     </PrivateRoutes>
                 ),
-                loader: () => fetch("http://localhost:5000/orders"),
+                loader: () =>
+                    fetch("https://restaurant-assignment-sandy.vercel.app/orders"),
             },
             {
                 path: "/update/:id",
@@ -101,13 +105,18 @@ const Router = createBrowserRouter([
                     </PrivateRoutes>
                 ),
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/foods/${params.id}`),
+                    fetch(
+                        `https://restaurant-assignment-sandy.vercel.app/foods/${params.id}`
+                    ),
             },
             {
                 path: "/orders/:id",
-                element:<TopFoodDetails></TopFoodDetails>,
-                loader: ({params}) => fetch(`http://localhost:5000/orders/${params.id}`),
-            }
+                element: <TopFoodDetails></TopFoodDetails>,
+                loader: ({ params }) =>
+                    fetch(
+                        `https://restaurant-assignment-sandy.vercel.app/orders/${params.id}`
+                    ),
+            },
         ],
     },
 ]);

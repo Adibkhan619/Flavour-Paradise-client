@@ -3,6 +3,7 @@ import { useContext } from "react";
 import toast from "react-hot-toast";
 import {  useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const AddFood = () => {
     const navigate = useNavigate();
@@ -40,7 +41,7 @@ const AddFood = () => {
 
         try {
             const { data } = await axios.post(
-                "http://localhost:5000/foods",
+                "https://restaurant-assignment-sandy.vercel.app/foods",
                 newFood
             );
             console.log(data);
@@ -53,6 +54,9 @@ const AddFood = () => {
 
     return (
         <div>
+                 <Helmet>
+                <title>Flavour Paradise | Add Food</title>
+            </Helmet>
             <div className="hero max-w-full  lg:max-w-full  mx-auto lg:h-[630px]  lg:mb-20">
                 <img
                     className="hero-overlay lg:h-[630px]  lg:px-0 lg:opacity-90"

@@ -6,7 +6,7 @@ import { Fade } from "react-awesome-reveal";
 const UserReview = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/users")
+        fetch("https://restaurant-assignment-sandy.vercel.app/users")
             .then((res) => res.json())
             .then((data) => {
                 setUsers(data);

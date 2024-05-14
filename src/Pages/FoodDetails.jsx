@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 
@@ -11,7 +12,10 @@ const FoodDetails = () => {
     console.log(food);
     return (
 
-<div className="card-body max-h-[calc(100vh-120px)] rounded-3xl mx-1 my-1 glass lg:my-5  lg:mx-5 lg:card-side bg-base-100 shadow-2xl gap-10 ">
+<div className="card-body lg:max-h-[calc(100vh-120px)] rounded-3xl mx-1 my-1 glass lg:my-5  lg:mx-5 lg:card-side bg-base-100 shadow-2xl gap-10 ">
+<Helmet>
+                <title>Flavour Paradise | Details</title>
+            </Helmet>
                 <figure className="items-center flex">
                     <img className="rounded-3xl" src={food_image} alt="Album" />
                 </figure>

@@ -6,25 +6,27 @@ import TopFood from "./TopFood";
 import BonusSec1 from "../components/HomeStyle/BonusSec1";
 import HomeDecor2 from "../components/HomeStyle/HomeDecor2";
 import HomeDecor3 from "../components/HomeStyle/HomeDecor3";
+import { Helmet } from "react-helmet";
 // import Drawer from "../components/HomeStyle/Drawer";
 
 const Home = () => {
     return (
-<Fade>
-<div>
-            
-            <Banner></Banner>           
-            <div className="lg:mx-10 mx-5">
-                <HomeTypewriter></HomeTypewriter>
-                <BonusSec1></BonusSec1>
-                <HomeDecor2></HomeDecor2>
-                <TopFood></TopFood>
-                <HomeDecor3></HomeDecor3>
-                <UserReview></UserReview>
+        <Fade>
+            <div>
+                <Helmet>
+                    <title>Flavour Paradise | Home</title>
+                </Helmet>
+                <Banner></Banner>
+                <div className="lg:mx-10 mx-5">
+                    <HomeTypewriter></HomeTypewriter>
+                    <BonusSec1></BonusSec1>
+                    <HomeDecor2></HomeDecor2>
+                    <TopFood></TopFood>
+                    <HomeDecor3></HomeDecor3>
+                    <UserReview></UserReview>
+                </div>
             </div>
-            
-        </div>
-</Fade>
+        </Fade>
     );
 };
 

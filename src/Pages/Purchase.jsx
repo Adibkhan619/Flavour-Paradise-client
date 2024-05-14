@@ -3,6 +3,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Purchase = () => {
     const navigate = useNavigate()
@@ -59,7 +60,7 @@ const Purchase = () => {
 
     try {
         const { data } = await axios.post(
-          'http://localhost:5000/orders',
+          'https://restaurant-assignment-sandy.vercel.app/orders',
           newOrder
         )
         console.log(data)
@@ -70,15 +71,18 @@ const Purchase = () => {
       }
 };
     return (
-        <div className="flex gap-5 mx-5 justify-center lg:flex-row md:flex-row flex-col">          
-                    <div className="card card-compact  h-fit bg-base-100 shadow-xl">
+        <div className="flex gap-5 lg:max-h-[calc(100vh-120px)] mx-5 justify-center lg:flex-row md:flex-row flex-col">
+                 <Helmet>
+                <title>Flavour Paradise | Purchase</title>
+            </Helmet>          
+                    <div className="card card-compact  bg-base-100 shadow-xl">
                         <figure>
                             <img
                                 src={food_image}                               
                             />
                         </figure>
                         <div className="card-body">
-                            <h2 className="card-title">{description}</h2>                        
+                            <h2 className="card-title oleo">{description}</h2>                        
                         </div>
                     </div>
                 
@@ -179,10 +183,10 @@ const Purchase = () => {
                     
         {
             quantity == 0 ? <div className="form-control mt-6">
-            <button type="submit" className="btn btn-primary" disabled>
+            <button type="submit" className="btn btn-secondary" disabled>
                 Sorry! We are out of Stock :/
             </button></div> : <div className="form-control mt-6">
-                        <button type="submit" className="btn btn-primary">
+                        <button type="submit" className="btn btn-secondary">
                             Order Now
                         </button>
                     </div>

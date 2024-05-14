@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Slides = ({image, text, paragraph}) => {
     return (
         <div className="">
@@ -17,6 +19,7 @@ const Slides = ({image, text, paragraph}) => {
                         <p className="mb-5 acme text-lg hidden lg:block">
                             {paragraph}
                         </p>
+                        <Link to="/allfoods"><button className="btn btn-ghost text-xl acme text-amber-300">Our Foods</button></Link>
                         {/* <Link to="/register"><button className="btn btn-primary">Get Started</button>
 </Link> */}
                     </div>

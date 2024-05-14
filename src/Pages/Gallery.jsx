@@ -3,19 +3,28 @@ import AddPhotoModal from "../components/AddPhotoModal";
 import GalleryItems from "../components/GalleryItems";
 import SmallBanner from "../components/SmallBanner";
 // import PrivateRoutes from "../components/PrivateRoutes";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 // import PrivateRoutes from "../components/PrivateRoutes";
 import { Fade } from "react-awesome-reveal";
 import GalleryStyle from "../components/HomeStyle/GalleryStyle";
+import { Helmet } from "react-helmet";
 
 const Gallery = () => {
     const items= useLoaderData()
     const {user} = useContext(AuthContext);
     console.log(items);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+      
     return (
         <Fade>
             <div className="">
+            <Helmet>
+                <title>Flavour Paradise | Gallery</title>
+            </Helmet>
             <SmallBanner></SmallBanner>    
             <GalleryStyle></GalleryStyle>        
             

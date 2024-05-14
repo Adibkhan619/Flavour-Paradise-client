@@ -20,11 +20,11 @@ const Login = () => {
       }, [])
 
     // NAVIGATE TO LAST VISITED PAGE
-    useEffect(() => {
-        if (user) {
-            navigate("/");
-        }
-    }, [navigate, user]);
+    // useEffect(() => {
+    //     if (user) {
+    //         navigate("/");
+    //     }
+    // }, [navigate, user]);
     const from = location.state || "/";
 
     //   EMAIL PASSWORD LOGIN
@@ -38,7 +38,7 @@ const Login = () => {
             const result = await signIn(email, pass);
             console.log(result.user);
             const { data } = await axios.post(
-                "http://localhost:5000/jwt",
+                "https://restaurant-assignment-sandy.vercel.app/jwt",
                 {
                     email: result?.user?.email,
                 },
@@ -58,7 +58,7 @@ const Login = () => {
         try {
             const result = await signInWithGoogle();
             const { data } = await axios.post(
-                "http://localhost:5000/jwt",
+                "https://restaurant-assignment-sandy.vercel.app/jwt",
                 {
                     email: result?.user?.email,
                 },
@@ -75,7 +75,7 @@ const Login = () => {
         try {
             const result = await githubLogin();
             const { data } = await axios.post(
-                "http://localhost:5000/jwt",
+                "https://restaurant-assignment-sandy.vercel.app/jwt",
                 {
                     email: result?.user?.email,
                 },

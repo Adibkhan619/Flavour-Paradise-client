@@ -44,22 +44,6 @@ const Register = () => {
         }
         setError("");
 
-        // // Create User
-        // createUser(email, password)
-        //     .then((result) => {
-        //         toast.success("Registration Successful !");
-        //         console.log(result, "success");
-        //         navigate("/")
-
-        //         updateProfile(result.user, {
-        //             displayName: name,
-        //             photoURL: photo,
-        //           })
-        //             .then()
-        //             .catch();
-        //     })
-        //     .catch((error) => console.log(error));
-
         try {
             const result = await createUser(email, password);
 
@@ -67,7 +51,7 @@ const Register = () => {
             setUser({ ...result?.user, photoURL: photo, displayName: name });
 
             const { data } = await axios.post(
-                `http://localhost:5000/jwt`,
+                `https://restaurant-assignment-sandy.vercel.app/jwt`,
                 {
                     email: result?.user?.email,
                 },
@@ -86,7 +70,7 @@ const Register = () => {
         <div>
             <div>
                 <Helmet>
-                    <title>Wonder Seeker | Register</title>
+                    <title>Flavour Paradise | Register</title>
                 </Helmet>
                 <div className="hero  max-w-full  mx-auto lg:h-[630px]  lg:mb-20">
                     <img

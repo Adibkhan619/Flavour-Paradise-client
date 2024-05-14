@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import TopFoodCard from "../components/TopFoodCard";
 import { Fade } from "react-awesome-reveal";
+import { Link } from "react-router-dom";
 
 const TopFood = () => {
 
@@ -28,7 +29,7 @@ const TopFood = () => {
     
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios(`http://localhost:5000/orders`)
+            const { data } = await axios(`https://restaurant-assignment-sandy.vercel.app/orders`)
             setItems(data)
           }
           
@@ -46,6 +47,7 @@ const slicedFood = items.slice(0,6)
                 slicedFood.map(food => <TopFoodCard key={food._id} food={food}></TopFoodCard>)
             }
         </div>
+        <Link to="/allfoods"><button className="btn-secondary btn mx-auto flex px-20 text-2xl oleo lg:mt-20 mt-5">All Foods</button></Link>
   </Fade>
     );
 };

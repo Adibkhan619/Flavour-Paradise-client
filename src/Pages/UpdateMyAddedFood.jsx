@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useContext } from "react";
 import toast from "react-hot-toast";
-import {  useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const UpdateMyAddedFood = () => {
-    const food = useLoaderData()
+    const food = useLoaderData();
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     console.log(food);
@@ -55,7 +56,7 @@ const UpdateMyAddedFood = () => {
 
         try {
             const { data } = await axios.put(
-                `http://localhost:5000/foods/${_id}`,
+                `https://restaurant-assignment-sandy.vercel.app/foods/${_id}`,
                 newFood
             );
             console.log(data);
@@ -68,6 +69,9 @@ const UpdateMyAddedFood = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Flavour Paradise | Update</title>
+            </Helmet>
             <div className="hero  max-w-full  mx-auto lg:h-[630px]  lg:mb-20">
                 <img
                     className="hero-overlay lg:h-[630px]  lg:px-0 lg:opacity-90"
@@ -75,14 +79,6 @@ const UpdateMyAddedFood = () => {
                     alt=""
                 />
                 <div className="hero-content px-5 lg:px-16 lg:gap-10 flex-col lg:flex-row-reverse">
-                    {/* <div className="text-center space-y-3 lg:text-left">
-                            <h1 className="text-5xl  acme py-5 font-bold animate__bounceIn animate__animated">
-                                Unlock Exclusive Benefits! Register Today.
-                            </h1>
-                            <p className="p-6 rounded-lg font-base bg-opacity-25 bg-orange-100 opacity-70 oleo">
-                            Join our community of travelers and gain access to personalized recommendations, special offers, and insider insights tailored to your preferences. Sign up today to start your journey towards unforgettable travel experiences.
-                            </p>
-                        </div> */}
                     <div className="card glass mt-5 shrink-0   shadow-2xl bg-opacity-85 animate__fadeInDown animate__animated">
                         <form
                             onSubmit={handleUpdateFood}

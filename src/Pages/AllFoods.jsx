@@ -17,6 +17,7 @@ import FoodCard from "../components/FoodCard";
 import SmallBanner from "../components/SmallBanner";
 import { Fade } from "react-awesome-reveal";
 import AllFoodsStyle from "../components/HomeStyle/AllFoodsStyle";
+import { Helmet } from "react-helmet";
 
 const AllFoods = () => {
     const [foods, setFoods] = useState([]);
@@ -24,9 +25,14 @@ const AllFoods = () => {
     // const [searchText, setSearchText] = useState('')
 
     useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
+
+    useEffect(() => {
         const getData = async () => {
             const { data } = await axios(
-                `http://localhost:5000/all-foods?search=${search}`
+                `https://restaurant-assignment-sandy.vercel.app/all-foods?search=${search}`
             );
             setFoods(data);
         };
@@ -43,6 +49,9 @@ const AllFoods = () => {
     return (
         <Fade>
             <div>
+            <Helmet>
+                <title>Flavour Paradise | All Foods</title>
+            </Helmet>
                 {/* BANNER CAROUSEL */}
                 <SmallBanner></SmallBanner>
                 <AllFoodsStyle></AllFoodsStyle>

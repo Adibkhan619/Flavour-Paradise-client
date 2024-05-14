@@ -1,6 +1,9 @@
+import { Fade } from "react-awesome-reveal";
+
 const BonusSec1 = () => {
     return (
-        <div className="lg:space-y-20 space-y-5  lg:mx-32">
+        <Fade>
+            <div className="lg:space-y-20 space-y-5  lg:mx-32">
             <div className="flex lg:flex-row flex-col gap-5 lg:gap-20 justify-center">
                 <img
                     src="https://i.postimg.cc/W4qTdKLz/redcharlie-t-7-KEq9-M0b0-unsplash.jpg"
@@ -45,6 +48,7 @@ const BonusSec1 = () => {
                 />
             </div>
         </div>
+        </Fade>
     );
 };
 

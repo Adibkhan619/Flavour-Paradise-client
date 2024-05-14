@@ -1,9 +1,11 @@
+import { Fade } from "react-awesome-reveal";
 import Marquee from "react-fast-marquee";
 
 
 const HomeDecor3 = () => {
     return (
-        <div className="lg:mt-20">
+        <Fade>
+            <div className="lg:mt-20">
             <Marquee>
             <div className='border-2 my-4 lg:my-6 border-red-900 w-screen border-dashed '></div>
         </Marquee>
@@ -23,6 +25,7 @@ const HomeDecor3 = () => {
             <div className='border-2 my-4 lg:my-6 border-red-900 w-screen border-dashed '></div>
         </Marquee>
         </div>
+        </Fade>
     );
 };
 

@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
+import { Helmet } from "react-helmet";
 import toast from "react-hot-toast";
 // import { useLoaderData } from "react-router-dom";
 
@@ -31,13 +32,13 @@ const MyOrders = () => {
       }, [])
    
       const getData = async () => {
-        const { data } = await axios(`http://localhost:5000/orders`)
+        const { data } = await axios(`https://restaurant-assignment-sandy.vercel.app/orders`)
         setItems(data)
       }
 
     const handleDelete = async id => {
         try {
-          const { data } = await axios.delete(`http://localhost:5000/order/${id}`)
+          const { data } = await axios.delete(`https://restaurant-assignment-sandy.vercel.app/order/${id}`)
           console.log(data)
           toast.success('Delete Successful')
     
@@ -50,6 +51,9 @@ const MyOrders = () => {
     return (
         <Fade>
             <div className="lg:mx-10">
+            <Helmet>
+                <title>Flavour Paradise | My Orders</title>
+            </Helmet>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}

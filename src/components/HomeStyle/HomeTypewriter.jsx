@@ -1,11 +1,13 @@
 
+import { Fade } from 'react-awesome-reveal';
 import Marquee from 'react-fast-marquee';
 import { Typewriter } from 'react-simple-typewriter'
 
 const HomeTypewriter = () => {
 
   return (
-    <div className='App lg:my-14 my-5 lg:mx-10'>
+    <Fade>
+        <div className='App lg:my-14 my-5 lg:mx-10'>
         <Marquee>
             <div className='border-2 my-4 lg:my-8 border-red-900 w-screen border-dashed '></div>
         </Marquee>
@@ -31,6 +33,7 @@ const HomeTypewriter = () => {
             <div className='border-2 my-4 lg:my-8 border-red-900 w-screen border-dashed '></div>
         </Marquee>
     </div>
+    </Fade>
   );
 };
 

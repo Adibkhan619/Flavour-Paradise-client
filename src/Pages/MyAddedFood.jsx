@@ -5,6 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
+import { Helmet } from "react-helmet";
 
 const MyAddedFood = () => {
     const { user } = useContext(AuthContext);
@@ -32,7 +33,7 @@ const MyAddedFood = () => {
 
     const getData = async () => {
         const { data } = await axios(
-            `http://localhost:5000/food/${user.email}`
+            `https://restaurant-assignment-sandy.vercel.app/food/${user.email}`
         );
         setItems(data);
     };
@@ -40,7 +41,7 @@ const MyAddedFood = () => {
     const handleDelete = async (id) => {
         try {
             const { data } = await axios.delete(
-                `http://localhost:5000/foods/${id}`
+                `https://restaurant-assignment-sandy.vercel.app/foods/${id}`
             );
             console.log(data);
             toast.success("Delete Successful");
@@ -55,6 +56,9 @@ const MyAddedFood = () => {
     return (
         <Fade>
             <div>
+            <Helmet>
+                <title>Flavour Paradise | My Foods</title>
+            </Helmet>
             <div className="lg:mx-10 mt-10">
                 <div className="overflow-x-auto">
                     <table className="table">
