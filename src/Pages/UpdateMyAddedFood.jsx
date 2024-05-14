@@ -86,10 +86,10 @@ const UpdateMyAddedFood = () => {
                     <div className="card glass mt-5 shrink-0   shadow-2xl bg-opacity-85 animate__fadeInDown animate__animated">
                         <form
                             onSubmit={handleUpdateFood}
-                            className="card-body flex-row gap-8"
+                            className="card-body flex-col  lg:flex-row gap-8"
                         >
                             <div>
-                                <div className="flex-col gap-12">
+                                <div className="flex-col  lg:gap-12">
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text font-semibold text-lg">
@@ -106,7 +106,7 @@ const UpdateMyAddedFood = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex gap-12">
+                                <div className="flex flex-col lg:flex-row lg:gap-12">
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text font-semibold text-lg">
@@ -137,7 +137,7 @@ const UpdateMyAddedFood = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex-col gap-12">
+                                <div className="flex flex-col lg:gap-12">
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text font-semibold text-lg">
@@ -153,7 +153,7 @@ const UpdateMyAddedFood = () => {
                                         />
                                     </div>
                                 </div>
-                                <div className="flex gap-12">
+                                <div className="flex flex-col lg:flex-row lg:gap-12">
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text font-semibold text-lg">
@@ -200,7 +200,7 @@ const UpdateMyAddedFood = () => {
                                     />
                                 </div>
 
-                                <div className="flex gap-12">
+                                <div className="flex flex-col lg:flex-row lg:gap-12">
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text font-semibold text-lg">
@@ -233,7 +233,7 @@ const UpdateMyAddedFood = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col justify-between">
+                                <div className="flex flex-col justify-between ">
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text font-semibold text-lg">

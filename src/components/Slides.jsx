@@ -2,7 +2,7 @@ const Slides = ({image, text, paragraph}) => {
     return (
         <div className="">
             <div
-                className="hero lg:min-h-[600px]  w-full"
+                className="hero lg:h-[600px] h-[300px]  w-full"
                 style={{
                     backgroundImage:
                         `url(${image})`
@@ -14,7 +14,7 @@ const Slides = ({image, text, paragraph}) => {
                         <h1 className="mb-5 text-7xl  oleo font-bold ">
                             {text}
                         </h1>
-                        <p className="mb-5 acme text-lg">
+                        <p className="mb-5 acme text-lg hidden lg:block">
                             {paragraph}
                         </p>
                         {/* <Link to="/register"><button className="btn btn-primary">Get Started</button>

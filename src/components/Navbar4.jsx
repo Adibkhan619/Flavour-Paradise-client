@@ -226,7 +226,7 @@ const Navbar4 = () => {
                             <p className="hidden md:block lg:block">
                                 {user?.displayName}
                             </p>
-                            <button onClick={logOut} className="btn h-full btn-ghost">Logout</button>
+                            <button onClick={logOut} className="btn h-full btn-ghost hidden lg:block ">Logout</button>
                         </div>
                     ) : (
                         <div>

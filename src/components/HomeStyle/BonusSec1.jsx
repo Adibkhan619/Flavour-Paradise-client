@@ -8,7 +8,7 @@ const BonusSec1 = () => {
                     className="rounded-3xl h-[500px]"
                 />
 
-                <div className="max-w-96">
+                <div className="lg:max-w-96">
                     <h1 className="text-5xl oleo mb-3">
                         Igniting Culinary Passion: Crafting Memories, One Dish
                         at a Time
@@ -30,7 +30,7 @@ const BonusSec1 = () => {
             </div>
 
             <div className="flex lg:flex-row flex-col-reverse justify-center gap-5 lg:gap-20">
-                <div className="max-w-96">
+                <div className="lg:max-w-96">
                     <h1 className="text-5xl oleo mb-3">
                     Savor the Art of Cooking: Where Passion Meets Pan
                     </h1>

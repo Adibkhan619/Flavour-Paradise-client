@@ -41,7 +41,7 @@ const slicedFood = items.slice(0,6)
 
     return (
   <Fade>
-          <div className="m-5 grid lg:grid-cols-3 md:grid-cols-2 grid-rows-1 gap-4  justify-center"> 
+          <div className="lg:m-5 grid lg:grid-cols-3 md:grid-cols-2 grid-rows-1 gap-4  justify-center"> 
             {
                 slicedFood.map(food => <TopFoodCard key={food._id} food={food}></TopFoodCard>)
             }
