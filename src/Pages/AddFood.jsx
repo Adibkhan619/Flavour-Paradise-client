@@ -56,7 +56,7 @@ const AddFood = () => {
             <div className="hero  max-w-full  mx-auto lg:h-[630px]  lg:mb-20">
                 <img
                     className="hero-overlay lg:h-[630px]  lg:px-0 lg:opacity-90"
-                    src="https://i.postimg.cc/V66rsDys/david-marcu-78-A265w-Pi-O4-unsplash.jpg"
+                    src="https://i.postimg.cc/L43RgL7t/todd-quackenbush-x5-SRhk-Fajr-A-unsplash.jpg"
                     alt=""
                 />
                 <div className="hero-content px-5 lg:px-16 lg:gap-10 flex-col lg:flex-row-reverse">
@@ -68,7 +68,7 @@ const AddFood = () => {
                             Join our community of travelers and gain access to personalized recommendations, special offers, and insider insights tailored to your preferences. Sign up today to start your journey towards unforgettable travel experiences.
                             </p>
                         </div> */}
-                    <div className="card glass mt-5 shrink-0   shadow-2xl bg-opacity-85 animate__fadeInDown animate__animated">
+                    <div className="card glass mt-5 shrink-0   shadow-2xl  animate__fadeInDown animate__animated">
                         <form
                             onSubmit={handleAddFood}
                             className="card-body flex-row gap-8"
@@ -236,7 +236,7 @@ const AddFood = () => {
                                         <div className="form-control mt-11 flex-1 justify-end">
                                             <button
                                                 type="submit"
-                                                className="btn border-none font-bold text-gray-800 text-lg bg-orange-500 w-full "
+                                                className="btn border-none font-bold text-gray-800 text-lg bg-amber-300 w-full "
                                             >
                                                 Add Your Food!
                                             </button>

@@ -29,17 +29,17 @@ const TopFoodCard = ({ food }) => {
                 <div className="card-body">
 
                     <div className="flex justify-between  items-center">
-                    <h2 className="card-title"><span className="text-3xl font-semibold sacramento ">{name}</span></h2>
-                    <h2 className=""><span className="bg-red-500 px-5 shadow-lg oleo text-white p-2 ">{origin}</span></h2>
+                    <h2 className="card-title"><span className="text-3xl font-semibold oleo  ">{name}</span></h2>
+                    <h2 className=""><span className="bg-red-500 px-5 shadow-lg acme text-white p-2 ">{origin}</span></h2>
                     </div>
                     <div className="flex justify-between">
-                        <h2 className="">Category: <span className="font-semibold">{category}</span></h2>
-                    <h2 className=""><span className="font-semibold">{chef}</span></h2>
+                        <h2 className="">Category: <span className="font-semibold oleo">{category}</span></h2>
+                    <h2 className=""><span className="font-semibold oleo">{chef}</span></h2>
                     </div>
                     
-                    <h2 className="">Price: <span className="font-semibold">{price}</span></h2>
+                    <h2 className=" ">Price: <span className="font-semibold oleo">{price}</span></h2>
                     
-                    <h2 className="">Total purchase: <span className="font-semibold">{orderQuantity}</span></h2>
+                    <h2 className="">Total purchase: <span className="font-semibold oleo">{orderQuantity}</span></h2>
                     {/* <p>{foodDescription}</p> */}
 
 

@@ -53,7 +53,7 @@ const Purchase = () => {
             return;
         }
         if(orderQuantity < 1){
-            toast.error("You have to increase quantity")
+            toast.error("Please increase quantity")
             return
         }
 

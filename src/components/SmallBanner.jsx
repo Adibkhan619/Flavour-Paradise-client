@@ -8,12 +8,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Fade } from "react-awesome-reveal";
 
 
 
 const SmallBanner = () => {
     return (
-        <div>
+        <Fade>
+            <div>
             <div>
                 {" "}
                 <div className="container  mx-auto">
@@ -67,6 +69,7 @@ const SmallBanner = () => {
                 </div>
             </div>
         </div>
+        </Fade>
     );
 };
 

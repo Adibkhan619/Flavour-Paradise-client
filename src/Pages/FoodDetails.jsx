@@ -18,42 +18,42 @@ const FoodDetails = () => {
 
                 <div className=" lg:w-1/2 lg:space-y-2">
                     <div >
-                        <h2 className=" text-4xl">{food_name}</h2>
-                        <p className="py-5">{food_category}</p>
+                        <h2 className=" text-4xl oleo font-bold">{food_name}</h2>
+                        <p className="py-2 satisfy text-xl">{description}</p>
                     </div>
 
                     <div>
-                        <h1 className="font-bold">Origin</h1>
-                        <p className="text-lg">{food_origin}</p>
+                        <h1 className="font-bold text-2xl satisfy">Origin</h1>
+                        <p className="text-3xl oleo font-bold">{food_origin}</p>
                     </div>
                     <div>
-                        <h1 className="font-bold ">Chef </h1>
-                        <p className="text-lg">{made_by}</p>
-                    </div>
-
-                    <div>
-                        <h1 className="font-bold ">Description</h1>
-                        <p className="text-lg">{description}</p>
+                        <h1 className="font-bold text-2xl satisfy">Chef </h1>
+                        <p className="text-3xl oleo font-bold">{made_by}</p>
                     </div>
 
                     <div>
-                        <h1 className="font-bold ">Price</h1>
-                        <p className="text-lg">
+                        <h1 className="font-bold text-2xl satisfy">Category</h1>
+                        <p className="text-3xl oleo font-bold">{food_category}</p>
+                    </div>
+
+                    <div>
+                        <h1 className="font-bold text-2xl satisfy">Price</h1>
+                        <p className="text-3xl oleo font-bold">
                             {price}{" "}
                             {/* <span className="text-sm">per year</span> */}
                         </p>
                     </div>
 
                     <div>
-                        <h1 className="font-bold">Quantity</h1>
+                        <h1 className="font-bold text-2xl satisfy">Quantity</h1>
                         <p className="text-xl">
-                            {} <span className="text-sm">{quantity}</span>
+                            {} <span className="text-3xl oleo font-bold">{quantity}</span>
                         </p>
                     </div>
 
                     <div className="card-actions justify-end">
                         <Link to={`/purchase/${_id}`}>
-                            <button className="btn btn-primary">Purchase</button>
+                            <button className="btn btn-secondary">Purchase</button>
                         </Link>
                     </div>
                 </div>

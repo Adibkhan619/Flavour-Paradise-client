@@ -11,7 +11,7 @@ const Slides = ({image, text, paragraph}) => {
                 <div className="hero-overlay -z-999 bg-gray-900 bg-opacity-50"></div>
                 <div className="  text-center text-neutral-content">
                     <div className="max-w-md">
-                        <h1 className="mb-5 text-7xl text-gray-50 oleo font-bold ">
+                        <h1 className="mb-5 text-7xl  oleo font-bold ">
                             {text}
                         </h1>
                         <p className="mb-5 acme text-lg">

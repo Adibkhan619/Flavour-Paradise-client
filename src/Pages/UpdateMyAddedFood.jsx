@@ -71,7 +71,7 @@ const UpdateMyAddedFood = () => {
             <div className="hero  max-w-full  mx-auto lg:h-[630px]  lg:mb-20">
                 <img
                     className="hero-overlay lg:h-[630px]  lg:px-0 lg:opacity-90"
-                    src="https://i.postimg.cc/V66rsDys/david-marcu-78-A265w-Pi-O4-unsplash.jpg"
+                    src="https://i.postimg.cc/fLxsK9bh/jason-jarrach-LJ5-Ih-BA4gbs-unsplash.jpg"
                     alt=""
                 />
                 <div className="hero-content px-5 lg:px-16 lg:gap-10 flex-col lg:flex-row-reverse">

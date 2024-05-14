@@ -15,6 +15,10 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
     // NAVIGATE TO LAST VISITED PAGE
     useEffect(() => {
         if (user) {
@@ -89,24 +93,21 @@ const Login = () => {
     return (
         <div>
             <Helmet>
-                <title>Wonder Seeker | Login</title>
+                <title>Flavour Paradise | Login</title>
             </Helmet>
             <div className="hero max-w-full  mx-auto lg:h-[630px] lg:bg-gray-900 lg:mb-20">
                 <img
                     className="hero-overlay lg:max-h-[630px] p-3 lg:p-0 lg:opacity-70"
-                    src="https://i.postimg.cc/V66rsDys/david-marcu-78-A265w-Pi-O4-unsplash.jpg"
+                    src="https://i.postimg.cc/Dz3BGj85/Pngtree-top-desk-with-blur-restaurant-15477052.jpg"
                     alt=""
                 />
                 <div className="hero-content  lg:px-16 lg:gap-10 justify-evenly flex-col lg:flex-row">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-7xl   py-5 font-bold animate__bounceIn animate__animated sacramento">
+                        <h1 className="text-7xl text-amber-300   py-5 font-bold animate__bounceIn animate__animated acme">
                             Login Now!
                         </h1>
-                        <p className="p-6 mx-5 lg:mx-0 rounded-lg  font-semibold bg-orange-100 bg-opacity-20 ">
-                            Welcome back! Log in to access your personalized
-                            travel dashboard, where you can manage your
-                            bookings, save favorite destinations, and stay
-                            updated on exclusive offers.
+                        <p className="p-6 mx-5 lg:mx-0 rounded-lg text-gray-50 font-semibold bg-orange-100 bg-opacity-20 ">
+                        Welcome back to Flavour Paradise! Sign in to unlock exclusive offers, manage your reservations, and stay updated on our latest culinary creations. Whether you are a loyal patron or a first-time visitor, your journey with us begins here. Join our culinary community and embark on a flavorful adventure unlike any other.
                         </p>
                     </div>
                     <div className="card glass shrink-0 lg:w-full m-5 max-w-sm shadow-2xl lg:bg-opacity-90  animate__fadeInDown animate__animated">
@@ -157,7 +158,7 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button
                                     type="submit"
-                                    className="btn border-none font-bold text-gray-800 text-lg bg-orange-500 w-full "
+                                    className="btn border-none font-bold text-gray-800 text-lg bg-amber-300 w-full "
                                 >
                                     Login
                                 </button>

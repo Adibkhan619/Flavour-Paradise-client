@@ -1,11 +1,13 @@
+import { Fade } from "react-awesome-reveal";
 
 
 
 const GalleryItems = ({ item }) => {
     const { feedback, photo, name, email, userPhoto } = item;
     return (
-        <div>
-            <div className="relative inline-block card w-[440px] shadow-2xl rounded-2xl">
+        <Fade>
+            <div>
+            <div className="relative inline-block card mx-2  shadow-2xl rounded-2xl">
                 <img src={photo} alt="Your Image" className="block rounded-2xl" />
 
 
@@ -27,6 +29,7 @@ const GalleryItems = ({ item }) => {
                 </div>
             </div>
         </div>
+        </Fade>
     );
 };
 

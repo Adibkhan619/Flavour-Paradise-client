@@ -14,9 +14,9 @@ const AddPhotoModal = () => {
         const form = e.currentTarget;
         const feedback = form.feedback.value;
         const photo = form.photo.value;
-        const name = user?.displayName;
+        const name = user.displayName;
         const email = user.email;
-        const userPhoto = user?.photoURL;
+        const userPhoto = user.photoURL;
 
         const userFeedback ={feedback, photo, name, email, userPhoto}
          console.log(userFeedback);
@@ -44,19 +44,19 @@ const AddPhotoModal = () => {
                     document.getElementById("my_modal_1").showModal()
                 }
             >
-                Add Feedback
+                Add Your Feedback
             </button>
             <dialog id="my_modal_1" className="modal">
                 <div className="modal-box">
                     <div className="flex justify-between items-center lg:flex-row flex-col-reverse">
                         <div className="text-center m-4 lg:text-left">
                             <h3 className="font-bold text-lg ">
-                            Hello! {user?.displayName}
+                            Hello! {user.displayName}
                         </h3>
                         <p className="py-2">Share your thoughts and experience with us!</p>
                         </div>
                         
-                        <img src={user?.photoURL} alt="" className="rounded-full max-w-20" />
+                        <img src={user.photoURL} alt="" className="rounded-full max-w-20" />
                     </div>
 
                     
@@ -92,7 +92,7 @@ const AddPhotoModal = () => {
                                 {/* <Link to="/gallery">
                                 </Link>                         */}
                                     <button className="btn" type="submit">Feedback</button>
-                                    <h1 className="text-sm my-4 text-right">Press <span className="text-green-600">Esc </span>to continue</h1>                               
+                                    <h1 className="text-sm my-4 text-left ">Press <span className="text-green-600">Esc </span>to continue</h1>                               
                             </div>
                         </form>
                     </div>

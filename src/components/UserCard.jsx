@@ -3,16 +3,16 @@
 const UserCard = ({ user }) => {
     const { name, review, img } = user;
     return (
-        <div className="flex h-full  mx-2 flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 bg-gray-200
+        <div className="flex h-full  mx-2 flex-col justify-center max-w-xs p-6 shadow-md rounded-xl sm:px-12 bg-base-200
         
-        transition ease-in-out delay-0  hover:-translate-y-1 hover:scale-110
+        transition ease-in-out delay-0  hover:-translate-y-1 hover:scale-105
         ">
             <img
                 src={img}
                 alt=""
-                className="w-32 h-32 mx-auto rounded-full bg-gray-500 dark:bg-gray-500 aspect-square"
+                className="w-32 h-32 mx-auto rounded-full  aspect-square"
             />
-            <div className="space-y-4 text-center divide-y divide-gray-700 dark:divide-gray-300">
+            <div className="space-y-4 text-center divide-y">
                 <div className="my-2 space-y-1">
                     <h2 className="text-xl font-semibold sm:text-2xl">
                         {name}

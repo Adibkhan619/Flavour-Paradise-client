@@ -14,7 +14,7 @@ const FoodsSlider = ({image, text}) => {
                     <div className="hero-overlay "></div>
                     <div className="hero-content text-center text-neutral-content">
                         <div className="max-w-md">
-                            <h1 className="mb-5 text-5xl font-bold">
+                            <h1 className="mb-5 text-5xl font-bold oleo">
                                 {text}
                             </h1>
 

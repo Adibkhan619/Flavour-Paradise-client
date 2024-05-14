@@ -16,63 +16,62 @@ import axios from "axios";
 import FoodCard from "../components/FoodCard";
 import SmallBanner from "../components/SmallBanner";
 import { Fade } from "react-awesome-reveal";
+import AllFoodsStyle from "../components/HomeStyle/AllFoodsStyle";
 
 const AllFoods = () => {
-
     const [foods, setFoods] = useState([]);
-    const [search, setSearch] = useState('')
+    const [search, setSearch] = useState("");
     // const [searchText, setSearchText] = useState('')
 
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios(`http://localhost:5000/all-foods?search=${search}`);
+            const { data } = await axios(
+                `http://localhost:5000/all-foods?search=${search}`
+            );
             setFoods(data);
         };
         getData();
     }, [search]);
 
-    const handleSearch = e => {
-        e.preventDefault()
-        const text = e.target.search.value
-        setSearch(text)
-      }
-      console.log(search);
-    
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const text = e.target.search.value;
+        setSearch(text);
+    };
+    console.log(search);
 
     return (
         <Fade>
             <div>
-            {/* BANNER CAROUSEL */}
-            <SmallBanner></SmallBanner>
+                {/* BANNER CAROUSEL */}
+                <SmallBanner></SmallBanner>
+                <AllFoodsStyle></AllFoodsStyle>
 
-            {/* SEARCH FUNCTION */}
-            <form onSubmit={handleSearch}>
-            <div className='flex p-1 overflow-hidden border rounded-lg    focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
-              <input
-                className='px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent'
-                type='text'
-                // onChange={e => setSearchText(e.target.value)}
-                // value={searchText}
-                name='search'
-                placeholder='Enter Food Name'
-                aria-label='Enter Job Title'
-              />
+                {/* SEARCH FUNCTION */}
+                <form onSubmit={handleSearch} className="mx-auto w-full flex justify-center">
+                    <div className=" join focus-within:ring focus-within:ring-opacity-40 border focus-within:border-secondary focus-within:ring-secondary rounded-full">
+                        <input
+                            className="input input-bordered join-item rounded-full lg:w-96 focus:placeholder-transparent bg-white text-center"
+                            name="search"
+                            type="text"
+                            placeholder="Enter Food Name"
+                            aria-label="Enter Job Title"
+                        />
+                        <button className="btn join-item rounded-r-full px-10">
+                            Search
+                        </button>
+                    </div>
+                </form>
 
-              <button className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
-                Search
-              </button>
+
+
+                {/* MAPPING FOODS */}
+                <div className="m-5 lg:mt-20 grid lg:grid-cols-3 md:grid-cols-2 grid-rows-1 gap-4 lg:mx-20  justify-center">
+                    {foods.map((food) => (
+                        <FoodCard key={food._id} food={food}></FoodCard>
+                    ))}
+                </div>
             </div>
-          </form>
-
-
-
-            {/* MAPPING FOODS */}
-            <div className="m-5 grid lg:grid-cols-3 md:grid-cols-2 grid-rows-1 gap-4 lg:mx-20  justify-center">
-                {foods.map((food) => (
-                    <FoodCard key={food._id} food={food}></FoodCard>
-                ))}
-            </div>
-        </div>
         </Fade>
     );
 };

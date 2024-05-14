@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 
 const HomeDecor3 = () => {
     return (
-        <div className="mt-20">
+        <div className="lg:mt-20">
             <Marquee>
             <div className='border-2 my-4 lg:my-6 border-red-900 w-screen border-dashed '></div>
         </Marquee>
