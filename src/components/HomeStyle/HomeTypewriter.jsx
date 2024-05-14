@@ -12,8 +12,8 @@ const HomeTypewriter = () => {
             <div className='border-2 my-4 lg:my-8 border-red-900 w-screen border-dashed '></div>
         </Marquee>
       <h1 style={{  margin: 'auto 0', fontWeight: 'normal', fontSize:48, textAlign:'center' }}>
-        <span className="oleo lg:text-6xl">Embark </span>
-         on a <span className="acme lg:text-6xl">journey</span>  of{' '}
+        <span className="oleo lg:text-6xl">Embark </span><span className=' font-semibold text-5xl'>on a </span>
+          <span className="acme lg:text-6xl">journey</span> <span className='satisfy'>of</span> {' '}
         <span style={{ color: 'red', fontWeight: 'bold', fontSize:48, }} className='acme font-bold lg:text-7xl'>
           {/* Style will be inherited from the parent element */}
           <Typewriter
