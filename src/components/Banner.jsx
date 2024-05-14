@@ -6,15 +6,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// import required modules
+
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-// import Slides from "./BannerSlides/Slides";
-// import SlidesOne from "./BannerSlides/SlidesOne";
 import Slides from "./Slides";
-// import img1 from "../assets/img1.jpg"
-import img2 from "../assets/img2.jpg"
-import img3 from "../assets/img3.jpg"
-import img4 from "../assets/img4.jpg"
 import { Fade } from "react-awesome-reveal";
 
 export default function Carousel() {
@@ -38,7 +32,7 @@ export default function Carousel() {
                 className="mySwiper "
             >
                 <SwiperSlide>
-                    <Slides image="https://i.postimg.cc/XJ2QfxJM/jed-owen-O4w-Sm-Nb6w18-unsplash.jpg"  paragraph={'We pride ourselves on delivering exceptional culinary experiences. From our carefully crafted menus to our inviting atmosphere, every visit promises delightful moments and unforgettable flavors.'} text={'Welcome to Flavour Paradise'}></Slides>
+                    <Slides image="https://i.postimg.cc/fLxsK9bh/jason-jarrach-LJ5-Ih-BA4gbs-unsplash.jpg"  paragraph={'We pride ourselves on delivering exceptional culinary experiences. From our carefully crafted menus to our inviting atmosphere, every visit promises delightful moments and unforgettable flavors.'} text={'Welcome to Flavour Paradise'}></Slides>
                 </SwiperSlide>
                 <SwiperSlide>
                     <Slides image="https://i.postimg.cc/jj0928WZ/shayna-douglas-H8qwry-GP-h0-unsplash.jpg" 

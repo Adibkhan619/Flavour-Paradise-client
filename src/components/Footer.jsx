@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <Fade>
             <div className="mt-10">
-            <footer className="footer footer-center bg-opacity-20  p-10 bg-primary text-primary-content">
+            <footer className="footer footer-center bg-opacity-50  p-10 bg-secondary  dark:text-white">
                 <aside>
                 <img  className="lg:w-16 lg:h-16 w-12 h-12  rounded-full border-4 " src="https://i.postimg.cc/J76hY5Cc/Dream.png" alt="" />
                     <p className="font-bold">

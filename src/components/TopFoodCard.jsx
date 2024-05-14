@@ -6,15 +6,15 @@ const TopFoodCard = ({ food }) => {
         name,
         price,
         orderQuantity,
-        buyerName,
-        email,
-        date,
+        // buyerName,
+        // email,
+        // date,
         image,
-        foodDescription,
+        // foodDescription,
         chef,
         origin,
         category,
-        available,
+        // available,
     } = food;
     console.log(food);
     return (
@@ -44,7 +44,7 @@ const TopFoodCard = ({ food }) => {
 
 
                     <div className="card-actions justify-end ">
-                       <Link to={`/orders/${_id}`} className="btn btn-block bg-primary">
+                       <Link to={`/orders/${_id}`} className="btn btn-block bg-secondary">
                                 Details
                        </Link>
                         

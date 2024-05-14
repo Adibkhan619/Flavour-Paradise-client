@@ -9,10 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-import img1 from "../assets/img1.jpg";
-import img2 from "../assets/img2.jpg";
-import img3 from "../assets/img3.jpg";
-import img4 from "../assets/img4.jpg";
+
 
 const SmallBanner = () => {
     return (
@@ -26,7 +23,7 @@ const SmallBanner = () => {
                         centeredFoodsSlider={true}
                         loop={true}
                         autoplay={{
-                            delay: 3500,
+                            delay: 3000,
                             disableOnInteraction: false,
                         }}
                         // pagination={{
@@ -38,21 +35,21 @@ const SmallBanner = () => {
                     >
                         <SwiperSlide>
                             <FoodsSlider
-                                image={img1}
+                                image="https://i.postimg.cc/QdkjMBBH/jay-wennington-N-Y88-TWm-Gw-A-unsplash.jpg"
                                 text={"Indulge in Our Exquisite Creations"}
                                 paragraph={""}
                             ></FoodsSlider>
                         </SwiperSlide>
                         <SwiperSlide>
                             <FoodsSlider
-                                image={img2}
+                                image="https://i.postimg.cc/fLxsK9bh/jason-jarrach-LJ5-Ih-BA4gbs-unsplash.jpg"
                                 text={"Savory Delights from Around the World"}
                                 paragraph={"here is paragraph"}
                             ></FoodsSlider>
                         </SwiperSlide>
                         <SwiperSlide>
                             <FoodsSlider
-                                image={img3}
+                                image="https://i.postimg.cc/brJVWWMN/rachel-park-hrlvr2-Zl-UNk-unsplash.jpg"
                                 text={
                                     "Taste the Global Tapestry on Our Dinner Menu"
                                 }
@@ -61,7 +58,7 @@ const SmallBanner = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                             <FoodsSlider
-                                image={img4}
+                                image="https://i.postimg.cc/kGBwf862/rumman-amin-n-Ks-o-XRGGEg-unsplash.jpg"
                                 text={"Around the World on a Plate"}
                                 paragraph={"here is paragraph"}
                             ></FoodsSlider>

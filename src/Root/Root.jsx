@@ -11,7 +11,7 @@ const Root = () => {
         <Fade>
         <div className='josefin font-medium bg-contain bg-fixed min-w-full  '> 
         
-        {/* <div className='josefin font-medium bg-contain bg-fixed min-w-full  'style={{backgroundImage: 'url(https://i.postimg.cc/t4FTvtHv/bernard-hermant-1n-DW7-Bj-Bj1s-unsplash.jpg)' , backgroundSize: 'cover' }}>  */}
+        {/* <div className='josefin font-medium bg-contain bg-fixed min-w-full  'style={{backgroundImage: 'url(https://i.postimg.cc/283SY7FS/lukas-blazek-EWDv-HNNf-Um-Q-unsplash.jpg)' , backgroundSize: 'cover' }}>  */}
         
         {/* <div className='josefin font-medium 
          

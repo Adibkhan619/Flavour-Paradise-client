@@ -18,11 +18,43 @@ const Navbar4 = () => {
 
     const handleToggle = (e) => {
         if (e.target.checked) {
-            setTheme("halloween");
+            setTheme("luxury");
         } else {
             setTheme("retro");
         }
     };
+
+    // "dark",
+    // "cupcake",
+    // "bumblebee",
+    // "emerald",
+    // "corporate",
+    // "synthwave",
+    // "retro",
+    // "cyberpunk",
+    // "valentine",
+    // "halloween",
+    // "garden",
+    // "forest",
+    // "aqua",
+    // "lofi",
+    // "pastel",
+    // "fantasy",
+    // "wireframe",
+    // "black",
+    // "luxury",
+    // "dracula",
+    // "cmyk",
+    // "autumn",
+    // "business",
+    // "acid",
+    // "lemonade",
+    // "night",
+    // "coffee",
+    // "winter",
+    // "dim",
+    // "nord",
+    // "sunset"
 
     const Navlinks = (
         <>
@@ -50,7 +82,7 @@ const Navbar4 = () => {
     );
     return (
         <div>
-            <div className="navbar bg-base-100   relative !z-99999999">
+            <div className="navbar bg-base-100 bg-opacity-50   relative !z-99999999">
                 <div className="navbar-start">
                     <div className="dropdown !z-[9999]">
                         <div
@@ -163,7 +195,7 @@ const Navbar4 = () => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content mt-3 !z-[9999999999] p-2 shadow bg-base-100 rounded-box w-52 relative overflow-visible "
                         >
-                            <li>
+                            {/* <li>
                                 <Link
                                     to="/myProfile"
                                     className="justify-between"
@@ -171,7 +203,7 @@ const Navbar4 = () => {
                                     Profile
                                     <span className="badge">New</span>
                                 </Link>
-                            </li>
+                            </li> */}
                             <li>
                                 <Link to="/addFood">Add Food</Link>
                             </li>

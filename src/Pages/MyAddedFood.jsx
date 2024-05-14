@@ -55,7 +55,7 @@ const MyAddedFood = () => {
     return (
         <Fade>
             <div>
-            <div className="lg:mx-10">
+            <div className="lg:mx-10 mt-10">
                 <div className="overflow-x-auto">
                     <table className="table">
                         {/* head */}
