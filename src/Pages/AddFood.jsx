@@ -41,7 +41,7 @@ const AddFood = () => {
 
         try {
             const { data } = await axios.post(
-                "https://restaurant-assignment-sandy.vercel.app/foods",
+                "https://b9a11-server-side-adibkhan619.vercel.app/foods",
                 newFood
             );
             console.log(data);

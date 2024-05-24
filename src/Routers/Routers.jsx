@@ -45,14 +45,14 @@ const Router = createBrowserRouter([
                     <Gallery></Gallery>
                 ),
                 loader: () =>
-                    fetch("https://restaurant-assignment-sandy.vercel.app/gallery"),
+                    fetch("https://b9a11-server-side-adibkhan619.vercel.app/gallery"),
             },
             {
                 path: "/foods/:id",
                 element: <FoodDetails></FoodDetails>,
                 loader: ({ params }) =>
                     fetch(
-                        `https://restaurant-assignment-sandy.vercel.app/foods/${params.id}`
+                        `https://b9a11-server-side-adibkhan619.vercel.app/foods/${params.id}`
                     ),
             },
             {
@@ -64,7 +64,7 @@ const Router = createBrowserRouter([
                 ),
                 loader: ({ params }) =>
                     fetch(
-                        `https://restaurant-assignment-sandy.vercel.app/foods/${params.id}`
+                        `https://b9a11-server-side-adibkhan619.vercel.app/foods/${params.id}`
                     ),
             },
             {
@@ -84,7 +84,7 @@ const Router = createBrowserRouter([
                 ),
                 loader: ({ params }) =>
                     fetch(
-                        `https://restaurant-assignment-sandy.vercel.app/food/${params.email}`
+                        `https://b9a11-server-side-adibkhan619.vercel.app/food/${params.email}`
                     ),
             },
             {
@@ -95,7 +95,7 @@ const Router = createBrowserRouter([
                     </PrivateRoutes>
                 ),
                 loader: () =>
-                    fetch("https://restaurant-assignment-sandy.vercel.app/orders"),
+                    fetch("https://b9a11-server-side-adibkhan619.vercel.app/orders"),
             },
             {
                 path: "/update/:id",
@@ -106,7 +106,7 @@ const Router = createBrowserRouter([
                 ),
                 loader: ({ params }) =>
                     fetch(
-                        `https://restaurant-assignment-sandy.vercel.app/foods/${params.id}`
+                        `https://b9a11-server-side-adibkhan619.vercel.app/foods/${params.id}`
                     ),
             },
             {
@@ -114,7 +114,7 @@ const Router = createBrowserRouter([
                 element: <TopFoodDetails></TopFoodDetails>,
                 loader: ({ params }) =>
                     fetch(
-                        `https://restaurant-assignment-sandy.vercel.app/orders/${params.id}`
+                        `https://b9a11-server-side-adibkhan619.vercel.app/orders/${params.id}`
                     ),
             },
         ],

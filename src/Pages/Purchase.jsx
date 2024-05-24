@@ -60,7 +60,7 @@ const Purchase = () => {
 
     try {
         const { data } = await axios.post(
-          'https://restaurant-assignment-sandy.vercel.app/orders',
+          'https://b9a11-server-side-adibkhan619.vercel.app/orders',
           newOrder
         )
         console.log(data)

@@ -38,7 +38,7 @@ const Login = () => {
             const result = await signIn(email, pass);
             console.log(result.user);
             const { data } = await axios.post(
-                "https://restaurant-assignment-sandy.vercel.app/jwt",
+                "https://b9a11-server-side-adibkhan619.vercel.app/jwt",
                 {
                     email: result?.user?.email,
                 },
@@ -58,7 +58,7 @@ const Login = () => {
         try {
             const result = await signInWithGoogle();
             const { data } = await axios.post(
-                "https://restaurant-assignment-sandy.vercel.app/jwt",
+                "https://b9a11-server-side-adibkhan619.vercel.app/jwt",
                 {
                     email: result?.user?.email,
                 },
@@ -75,7 +75,7 @@ const Login = () => {
         try {
             const result = await githubLogin();
             const { data } = await axios.post(
-                "https://restaurant-assignment-sandy.vercel.app/jwt",
+                "https://b9a11-server-side-adibkhan619.vercel.app/jwt",
                 {
                     email: result?.user?.email,
                 },

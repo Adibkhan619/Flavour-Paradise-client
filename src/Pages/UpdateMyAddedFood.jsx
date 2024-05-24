@@ -56,7 +56,7 @@ const UpdateMyAddedFood = () => {
 
         try {
             const { data } = await axios.put(
-                `https://restaurant-assignment-sandy.vercel.app/foods/${_id}`,
+                `https://b9a11-server-side-adibkhan619.vercel.app/foods/${_id}`,
                 newFood
             );
             console.log(data);

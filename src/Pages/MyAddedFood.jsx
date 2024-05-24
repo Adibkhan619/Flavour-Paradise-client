@@ -33,7 +33,7 @@ const MyAddedFood = () => {
 
     const getData = async () => {
         const { data } = await axios(
-            `https://restaurant-assignment-sandy.vercel.app/food/${user.email}`
+            `https://b9a11-server-side-adibkhan619.vercel.app/food/${user.email}`
         );
         setItems(data);
     };
@@ -41,7 +41,7 @@ const MyAddedFood = () => {
     const handleDelete = async (id) => {
         try {
             const { data } = await axios.delete(
-                `https://restaurant-assignment-sandy.vercel.app/foods/${id}`
+                `https://b9a11-server-side-adibkhan619.vercel.app/foods/${id}`
             );
             console.log(data);
             toast.success("Delete Successful");

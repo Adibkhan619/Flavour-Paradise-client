@@ -32,7 +32,7 @@ const AllFoods = () => {
     useEffect(() => {
         const getData = async () => {
             const { data } = await axios(
-                `https://restaurant-assignment-sandy.vercel.app/all-foods?search=${search}`
+                `https://b9a11-server-side-adibkhan619.vercel.app/all-foods?search=${search}`
             );
             setFoods(data);
         };

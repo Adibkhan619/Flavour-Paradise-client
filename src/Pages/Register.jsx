@@ -51,7 +51,7 @@ const Register = () => {
             setUser({ ...result?.user, photoURL: photo, displayName: name });
 
             const { data } = await axios.post(
-                `https://restaurant-assignment-sandy.vercel.app/jwt`,
+                `https://b9a11-server-side-adibkhan619.vercel.app/jwt`,
                 {
                     email: result?.user?.email,
                 },

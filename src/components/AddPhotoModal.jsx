@@ -23,7 +23,7 @@ const AddPhotoModal = () => {
 
          try {
             const { data } = await axios.post(
-                "https://restaurant-assignment-sandy.vercel.app/gallery",
+                "https://b9a11-server-side-adibkhan619.vercel.app/gallery",
                 userFeedback
             );
             console.log(data);

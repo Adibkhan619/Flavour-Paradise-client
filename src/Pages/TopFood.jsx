@@ -29,7 +29,7 @@ const TopFood = () => {
     
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios(`https://restaurant-assignment-sandy.vercel.app/orders`)
+            const { data } = await axios(`https://b9a11-server-side-adibkhan619.vercel.app/orders`)
             setItems(data)
           }
           
